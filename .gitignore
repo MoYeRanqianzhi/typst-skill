@@ -1,5 +1,10 @@
 /typst/
 /The Raindrop-Blue Book/
-/--help/
-/.DS_Store
+/node_modules/
+/dist/
+/target/
+__pycache__/
+*.pyc
+.DS_Store
 Thumbs.db
+/--help/

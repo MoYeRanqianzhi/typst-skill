@@ -28,10 +28,10 @@ CATEGORY_MAP = {
     "html": "export",
 }
 
-MACRO_RE = re.compile(r"#\[(func|elem|ty|scope)(->:\((.*->)\))->\]")
+MACRO_RE = re.compile(r"#\[(func|elem|ty|scope)(?:\((.*?)\))?\]")
 NAME_RE = re.compile(r'name\s*=\s*"([^"]+)"')
 TITLE_RE = re.compile(r'title\s*=\s*"([^"]+)"')
-PUB_FN_RE = re.compile(r"pub\s+(->:const\s+)->fn\s+([A-Za-z_][A-Za-z0-9_]*)")
+PUB_FN_RE = re.compile(r"pub\s+(?:const\s+)?fn\s+([A-Za-z_][A-Za-z0-9_]*)")
 PUB_STRUCT_RE = re.compile(r"pub\s+struct\s+([A-Za-z_][A-Za-z0-9_]*)")
 PUB_ENUM_RE = re.compile(r"pub\s+enum\s+([A-Za-z_][A-Za-z0-9_]*)")
 PUB_CONST_RE = re.compile(r"pub\s+const\s+([A-Za-z_][A-Za-z0-9_]*)")
@@ -55,7 +55,7 @@ def skill_root() -> Path:
 def camel_to_kebab(name: str) -> str:
     if name.endswith("Elem"):
         name = name[:-4]
-    chunks = re.sub(r"([a-z0-9])([A-Z])", r"-", name).replace("_", "-")
+    chunks = re.sub(r"([a-z0-9])([A-Z])", r"\1-\2", name).replace("_", "-")
     return chunks.lower()
 
 
@@ -122,11 +122,13 @@ def collect_reference_pages(typst_root: Path) -> dict[str, list[dict[str, str]]]
         for path in paths:
             body = read_text(path).strip().splitlines()
             title = next((line[2:].strip() for line in body if line.startswith("# ")), path.stem)
-            items.append({
-                "slug": path.stem,
-                "title": title,
-                "path": path.relative_to(typst_root).as_posix(),
-            })
+            items.append(
+                {
+                    "slug": path.stem,
+                    "title": title,
+                    "path": path.relative_to(typst_root).as_posix(),
+                }
+            )
         result[section] = items
     return result
 
@@ -134,17 +136,15 @@ def collect_reference_pages(typst_root: Path) -> dict[str, list[dict[str, str]]]
 def collect_groups(typst_root: Path) -> list[dict[str, object]]:
     groups_path = typst_root / "docs" / "reference" / "groups.yml"
     groups = yaml.safe_load(read_text(groups_path))
-    normalized = []
-    for item in groups:
-        normalized.append(
-            {
-                "name": item["name"],
-                "title": item["title"],
-                "category": item["category"],
-                "path": item.get("path", []),
-            }
-        )
-    return normalized
+    return [
+        {
+            "name": item["name"],
+            "title": item["title"],
+            "category": item["category"],
+            "path": item.get("path", []),
+        }
+        for item in groups
+    ]
 
 
 def dedupe(entries: Iterable[dict[str, object]]) -> list[dict[str, object]]:
@@ -292,7 +292,7 @@ def render_markdown(snapshot: dict[str, object], pages: dict[str, list[dict[str,
 
     counts = Counter(str(entry["kind"]) for entry in entries)
     lines = [
-        "# Typst API Index",
+        "# Typst API Summary",
         "",
         f"- Generated at: `{snapshot['generated_at']}`",
         f"- Typst version: `{snapshot['typst']['version']}`",
@@ -300,30 +300,23 @@ def render_markdown(snapshot: dict[str, object], pages: dict[str, list[dict[str,
         f"- Blue-book Typst dependency: `{snapshot['blue_book'].get('typst_dependency') or 'unknown'}`",
         f"- Entries: `{len(entries)}` primary API records",
         f"- Kinds: `function={counts.get('function', 0)}`, `element={counts.get('element', 0)}`, `type={counts.get('type', 0)}`, `member={counts.get('member', 0)}`",
+        f"- Official page sets: `language={len(pages.get('language', []))}`, `library={len(pages.get('library', []))}`, `export={len(pages.get('export', []))}`",
+        f"- Official group pages: `{len(groups)}`",
         "",
-        "## Official Reference Pages",
+        "Use `typst-api-index.json` plus `query_api_index.py` for the exhaustive inventory.",
+        "",
+        "## Category Counts",
         "",
     ]
 
-    for section in ["language", "library", "export"]:
-        lines.append(f"### {section.title()}")
-        for item in pages.get(section, []):
-            lines.append(f"- `{item['slug']}` — `{item['path']}`")
-        lines.append("")
+    for category in sorted(by_category):
+        lines.append(f"- `{category}`: `{len(by_category[category])}`")
 
-    lines.extend(["## Official Group Pages", ""])
-    for group in groups:
-        module_path = ".".join(group["path"]) if group["path"] else "(none)"
-        lines.append(f"- `{group['name']}` — category `{group['category']}`, module path `{module_path}`")
-    lines.append("")
-    lines.append("## API Inventory")
-    lines.append("")
-
+    lines.extend(["", "## Sample Entries", ""])
     for category in sorted(by_category):
         lines.append(f"### {category}")
-        for entry in sorted(by_category[category], key=lambda item: str(item["name"])):
-            title = f" ({entry['title']})" if entry.get("title") and entry["title"] != entry["name"] else ""
-            lines.append(f"- `{entry['name']}` — {entry['kind']}{title} — `{entry['source']}`")
+        for entry in sorted(by_category[category], key=lambda item: str(item['name']))[:8]:
+            lines.append(f"- `{entry['name']}` - `{entry['source']}`")
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"

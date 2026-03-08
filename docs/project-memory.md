@@ -40,3 +40,7 @@
 - 以“`SKILL.md` 负责调度，`reference/` 负责知识承载”为核心。
 - 以官方 Typst docs/source 为主，蓝皮书用于中文经验、案例和模板模式补强。
 - 同时保留“综合索引”和“轻量官方 inventory”，兼顾覆盖率与查询速度。
+
+## Encoding
+
+- All Skill and docs files should be stored as UTF-8.

@@ -20,13 +20,13 @@ Treat official Typst sources as the primary authority. Use the blue book to add 
 
 Classify the request before opening more files:
 
-- **Compile / debug / publish workflow** → open `reference/01-workflows/compile-debug-publish.md`
-- **Project layout / templates / packages** → open `reference/01-workflows/project-templates-and-packages.md`
-- **Markup / scripting / show-set / context / math language questions** → open the relevant file under `reference/02-language/`
-- **Standard-library / symbols / HTML typed API lookup** → first run `python scripts/query_reference.py --query <keyword>`; use `python scripts/query_api_index.py --name <keyword>` when you need a fast official-only inventory filter
-- **Chinese typesetting / bibliography / figures / state / query / template recipes** → open the relevant file under `reference/05-recipes/`
-- **CLI / workspace / source-level behavior** → open `reference/06-dev/cli-workspace-and-testing.md` or `reference/06-dev/architecture-and-source-map.md`
-- **Version conflicts / migration / blue-book drift** → open the relevant file under `reference/07-versioning/`
+- **Compile / debug / publish workflow** -> open `reference/01-workflows/compile-debug-publish.md`
+- **Project layout / templates / packages** -> open `reference/01-workflows/project-templates-and-packages.md`
+- **Markup / scripting / show-set / context / math language questions** -> open the relevant file under `reference/02-language/`
+- **Standard-library / symbols / HTML typed API lookup** -> first run `python scripts/query_reference.py --query <keyword>`; use `python scripts/query_api_index.py --name <keyword>` when you need a fast official-only inventory filter
+- **Chinese typesetting / bibliography / figures / state / query / template recipes** -> open the relevant file under `reference/05-recipes/`
+- **CLI / workspace / source-level behavior** -> open `reference/06-dev/cli-workspace-and-testing.md` or `reference/06-dev/architecture-and-source-map.md`
+- **Version conflicts / migration / blue-book drift** -> open the relevant file under `reference/07-versioning/`
 
 Keep context small: load only the minimal reference file that matches the current task.
 

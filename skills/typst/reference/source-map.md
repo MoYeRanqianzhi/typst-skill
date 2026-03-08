@@ -1,3 +1,5 @@
+> Support note: This file is a generated-index support document. Prefer the numbered reference tree for normal task routing.
+
 ﻿# Source Map
 
 ## Official Typst Source

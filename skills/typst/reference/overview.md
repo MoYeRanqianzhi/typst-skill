@@ -1,3 +1,5 @@
+> Support note: This file is a generated-index support document. Prefer the numbered reference tree for normal task routing.
+
 ﻿# Typst Skill Overview
 
 - Purpose: provide a source-backed Typst skill rooted in the local `typst` compiler source tree and the local Chinese Blue Book repository.

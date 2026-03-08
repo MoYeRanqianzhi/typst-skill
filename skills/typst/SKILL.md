@@ -45,12 +45,12 @@ Keep context small: load only the minimal reference file that matches the curren
 The skill ships with two complementary indexes:
 
 - `reference/generated/typst-reference.json` + `scripts/query_reference.py`:
-  - broader cross-source index
-  - includes official API items, docs pages, blue-book files, and extra generated metadata
-  - best default search path for most questions
+  - the default cross-source index
+  - includes official API items, docs pages, blue-book files, symbols, typed HTML metadata, and extra generated metadata
+  - use this first for most questions
 - `reference/08-generated/typst-api-index.json` + `scripts/query_api_index.py`:
-  - lightweight official-source inventory
-  - good for quick category/kind filtering and source anchoring
+  - the fast-path official-source inventory
+  - use this when you want quick filtering by name, kind, or category
 
 When a generated index and raw upstream source disagree, trust the raw upstream source and mention the discrepancy.
 

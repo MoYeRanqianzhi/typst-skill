@@ -1,1 +1,3946 @@
-[]
+[
+  {
+    "name": "artifact",
+    "kind": "element",
+    "title": "artifact",
+    "category": "export",
+    "source": "crates/typst-library/src/pdf/accessibility.rs:37",
+    "scope": null
+  },
+  {
+    "name": "attach",
+    "kind": "element",
+    "title": "attach",
+    "category": "export",
+    "source": "crates/typst-library/src/pdf/attach.rs:33",
+    "scope": null
+  },
+  {
+    "name": "data-cell",
+    "kind": "function",
+    "title": "data-cell",
+    "category": "export",
+    "source": "crates/typst-library/src/pdf/accessibility.rs:236",
+    "scope": null
+  },
+  {
+    "name": "header-cell",
+    "kind": "function",
+    "title": "header-cell",
+    "category": "export",
+    "source": "crates/typst-library/src/pdf/accessibility.rs:175",
+    "scope": null
+  },
+  {
+    "name": "pdf-marker-tag",
+    "kind": "element",
+    "title": "pdf-marker-tag",
+    "category": "export",
+    "source": "crates/typst-library/src/pdf/accessibility.rs:285",
+    "scope": null
+  },
+  {
+    "name": "table-summary",
+    "kind": "function",
+    "title": "table-summary",
+    "category": "export",
+    "source": "crates/typst-library/src/pdf/accessibility.rs:109",
+    "scope": null
+  },
+  {
+    "name": "abs",
+    "kind": "function",
+    "title": "Absolute",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:73",
+    "scope": null
+  },
+  {
+    "name": "acos",
+    "kind": "function",
+    "title": "Arccosine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:322",
+    "scope": null
+  },
+  {
+    "name": "acosh",
+    "kind": "function",
+    "title": "Inverse Hyperbolic Cosine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:428",
+    "scope": null
+  },
+  {
+    "name": "arguments",
+    "kind": "type",
+    "title": "arguments",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:48",
+    "scope": null
+  },
+  {
+    "name": "arguments.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:339",
+    "scope": "arguments"
+  },
+  {
+    "name": "arguments.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:315",
+    "scope": "arguments"
+  },
+  {
+    "name": "arguments.filter",
+    "kind": "function",
+    "title": "filter",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:382",
+    "scope": "arguments"
+  },
+  {
+    "name": "arguments.len",
+    "kind": "function",
+    "title": "Length",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:327",
+    "scope": "arguments"
+  },
+  {
+    "name": "arguments.map",
+    "kind": "function",
+    "title": "map",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:411",
+    "scope": "arguments"
+  },
+  {
+    "name": "arguments.named",
+    "kind": "function",
+    "title": "named",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:365",
+    "scope": "arguments"
+  },
+  {
+    "name": "arguments.pos",
+    "kind": "function",
+    "title": "Positional",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/args.rs:355",
+    "scope": "arguments"
+  },
+  {
+    "name": "array",
+    "kind": "type",
+    "title": "array",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:75",
+    "scope": null
+  },
+  {
+    "name": "array.all",
+    "kind": "function",
+    "title": "all",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:663",
+    "scope": "array"
+  },
+  {
+    "name": "array.any",
+    "kind": "function",
+    "title": "any",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:645",
+    "scope": "array"
+  },
+  {
+    "name": "array.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:207",
+    "scope": "array"
+  },
+  {
+    "name": "array.chunks",
+    "kind": "function",
+    "title": "chunks",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:804",
+    "scope": "array"
+  },
+  {
+    "name": "array.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:163",
+    "scope": "array"
+  },
+  {
+    "name": "array.contains",
+    "kind": "function",
+    "title": "contains",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:305",
+    "scope": "array"
+  },
+  {
+    "name": "array.dedup",
+    "kind": "function",
+    "title": "Deduplicate",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:1021",
+    "scope": "array"
+  },
+  {
+    "name": "array.enumerate",
+    "kind": "function",
+    "title": "enumerate",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:460",
+    "scope": "array"
+  },
+  {
+    "name": "array.filter",
+    "kind": "function",
+    "title": "filter",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:411",
+    "scope": "array"
+  },
+  {
+    "name": "array.find",
+    "kind": "function",
+    "title": "find",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:316",
+    "scope": "array"
+  },
+  {
+    "name": "array.first",
+    "kind": "function",
+    "title": "first",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:180",
+    "scope": "array"
+  },
+  {
+    "name": "array.flatten",
+    "kind": "function",
+    "title": "flatten",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:681",
+    "scope": "array"
+  },
+  {
+    "name": "array.fold",
+    "kind": "function",
+    "title": "fold",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:585",
+    "scope": "array"
+  },
+  {
+    "name": "array.insert",
+    "kind": "function",
+    "title": "insert",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:245",
+    "scope": "array"
+  },
+  {
+    "name": "array.intersperse",
+    "kind": "function",
+    "title": "intersperse",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:765",
+    "scope": "array"
+  },
+  {
+    "name": "array.join",
+    "kind": "function",
+    "title": "join",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:718",
+    "scope": "array"
+  },
+  {
+    "name": "array.last",
+    "kind": "function",
+    "title": "last",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:193",
+    "scope": "array"
+  },
+  {
+    "name": "array.len",
+    "kind": "function",
+    "title": "Length",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:172",
+    "scope": "array"
+  },
+  {
+    "name": "array.map",
+    "kind": "function",
+    "title": "map",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:434",
+    "scope": "array"
+  },
+  {
+    "name": "array.pop",
+    "kind": "function",
+    "title": "pop",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:235",
+    "scope": "array"
+  },
+  {
+    "name": "array.position",
+    "kind": "function",
+    "title": "position",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:338",
+    "scope": "array"
+  },
+  {
+    "name": "array.product",
+    "kind": "function",
+    "title": "product",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:625",
+    "scope": "array"
+  },
+  {
+    "name": "array.push",
+    "kind": "function",
+    "title": "push",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:224",
+    "scope": "array"
+  },
+  {
+    "name": "array.range",
+    "kind": "function",
+    "title": "range",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:375",
+    "scope": "array"
+  },
+  {
+    "name": "array.reduce",
+    "kind": "function",
+    "title": "reduce",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:1114",
+    "scope": "array"
+  },
+  {
+    "name": "array.remove",
+    "kind": "function",
+    "title": "remove",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:260",
+    "scope": "array"
+  },
+  {
+    "name": "array.rev",
+    "kind": "function",
+    "title": "Reverse",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:695",
+    "scope": "array"
+  },
+  {
+    "name": "array.slice",
+    "kind": "function",
+    "title": "slice",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:278",
+    "scope": "array"
+  },
+  {
+    "name": "array.sorted",
+    "kind": "function",
+    "title": "sorted",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:861",
+    "scope": "array"
+  },
+  {
+    "name": "array.split",
+    "kind": "function",
+    "title": "split",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:705",
+    "scope": "array"
+  },
+  {
+    "name": "array.sum",
+    "kind": "function",
+    "title": "sum",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:604",
+    "scope": "array"
+  },
+  {
+    "name": "array.to-dict",
+    "kind": "function",
+    "title": "to-dict",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:1077",
+    "scope": "array"
+  },
+  {
+    "name": "array.windows",
+    "kind": "function",
+    "title": "windows",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:830",
+    "scope": "array"
+  },
+  {
+    "name": "array.zip",
+    "kind": "function",
+    "title": "zip",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/array.rs:494",
+    "scope": "array"
+  },
+  {
+    "name": "asin",
+    "kind": "function",
+    "title": "Arcsine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:304",
+    "scope": null
+  },
+  {
+    "name": "asinh",
+    "kind": "function",
+    "title": "Inverse Hyperbolic Sine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:414",
+    "scope": null
+  },
+  {
+    "name": "assert",
+    "kind": "function",
+    "title": "assert",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/mod.rs:169",
+    "scope": null
+  },
+  {
+    "name": "assert.eq",
+    "kind": "function",
+    "title": "Assert Equal",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/mod.rs:197",
+    "scope": "assert"
+  },
+  {
+    "name": "assert.ne",
+    "kind": "function",
+    "title": "Assert Not Equal",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/mod.rs:230",
+    "scope": "assert"
+  },
+  {
+    "name": "atan",
+    "kind": "function",
+    "title": "Arctangent",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:340",
+    "scope": null
+  },
+  {
+    "name": "atan2",
+    "kind": "function",
+    "title": "Four-quadrant Arctangent",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:356",
+    "scope": null
+  },
+  {
+    "name": "atanh",
+    "kind": "function",
+    "title": "Inverse Hyperbolic Tangent",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:447",
+    "scope": null
+  },
+  {
+    "name": "auto",
+    "kind": "type",
+    "title": "auto",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/auto.rs:21",
+    "scope": null
+  },
+  {
+    "name": "binom",
+    "kind": "function",
+    "title": "Binomial",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:589",
+    "scope": null
+  },
+  {
+    "name": "bytes",
+    "kind": "type",
+    "title": "bytes",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/bytes.rs:46",
+    "scope": null
+  },
+  {
+    "name": "bytes.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/bytes.rs:262",
+    "scope": "bytes"
+  },
+  {
+    "name": "bytes.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/bytes.rs:245",
+    "scope": "bytes"
+  },
+  {
+    "name": "bytes.len",
+    "kind": "function",
+    "title": "Length",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/bytes.rs:254",
+    "scope": "bytes"
+  },
+  {
+    "name": "bytes.slice",
+    "kind": "function",
+    "title": "slice",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/bytes.rs:279",
+    "scope": "bytes"
+  },
+  {
+    "name": "ceil",
+    "kind": "function",
+    "title": "ceil",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:709",
+    "scope": null
+  },
+  {
+    "name": "clamp",
+    "kind": "function",
+    "title": "clamp",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:839",
+    "scope": null
+  },
+  {
+    "name": "content",
+    "kind": "type",
+    "title": "content",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:84",
+    "scope": null
+  },
+  {
+    "name": "content.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:547",
+    "scope": "content"
+  },
+  {
+    "name": "content.fields",
+    "kind": "function",
+    "title": "fields",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:569",
+    "scope": "content"
+  },
+  {
+    "name": "content.func",
+    "kind": "function",
+    "title": "func",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:518",
+    "scope": "content"
+  },
+  {
+    "name": "content.has",
+    "kind": "function",
+    "title": "has",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:524",
+    "scope": "content"
+  },
+  {
+    "name": "content.location",
+    "kind": "function",
+    "title": "location",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:587",
+    "scope": "content"
+  },
+  {
+    "name": "context",
+    "kind": "element",
+    "title": "context",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/context.rs:65",
+    "scope": null
+  },
+  {
+    "name": "cos",
+    "kind": "function",
+    "title": "Cosine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:265",
+    "scope": null
+  },
+  {
+    "name": "cosh",
+    "kind": "function",
+    "title": "Hyperbolic Cosine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:386",
+    "scope": null
+  },
+  {
+    "name": "datetime",
+    "kind": "type",
+    "title": "datetime",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:138",
+    "scope": null
+  },
+  {
+    "name": "datetime.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:259",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.day",
+    "kind": "function",
+    "title": "day",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:445",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.display",
+    "kind": "function",
+    "title": "display",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:388",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.hour",
+    "kind": "function",
+    "title": "hour",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:455",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.minute",
+    "kind": "function",
+    "title": "minute",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:465",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.month",
+    "kind": "function",
+    "title": "month",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:425",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.ordinal",
+    "kind": "function",
+    "title": "ordinal",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:485",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.second",
+    "kind": "function",
+    "title": "second",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:475",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.today",
+    "kind": "function",
+    "title": "today",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:363",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.weekday",
+    "kind": "function",
+    "title": "weekday",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:435",
+    "scope": "datetime"
+  },
+  {
+    "name": "datetime.year",
+    "kind": "function",
+    "title": "year",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/datetime.rs:415",
+    "scope": "datetime"
+  },
+  {
+    "name": "decimal",
+    "kind": "type",
+    "title": "decimal",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/decimal.rs:95",
+    "scope": null
+  },
+  {
+    "name": "decimal.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/decimal.rs:299",
+    "scope": "decimal"
+  },
+  {
+    "name": "dictionary",
+    "kind": "type",
+    "title": "dictionary",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:80",
+    "scope": null
+  },
+  {
+    "name": "dictionary.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:204",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:185",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.filter",
+    "kind": "function",
+    "title": "filter",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:292",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.insert",
+    "kind": "function",
+    "title": "insert",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:225",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.keys",
+    "kind": "function",
+    "title": "keys",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:253",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.len",
+    "kind": "function",
+    "title": "Length",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:194",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.map",
+    "kind": "function",
+    "title": "map",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:316",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.pairs",
+    "kind": "function",
+    "title": "pairs",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:266",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.remove",
+    "kind": "function",
+    "title": "remove",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:237",
+    "scope": "dictionary"
+  },
+  {
+    "name": "dictionary.values",
+    "kind": "function",
+    "title": "values",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/dict.rs:259",
+    "scope": "dictionary"
+  },
+  {
+    "name": "div-euclid",
+    "kind": "function",
+    "title": "Euclidean Division",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:1009",
+    "scope": null
+  },
+  {
+    "name": "duration",
+    "kind": "type",
+    "title": "duration",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:12",
+    "scope": null
+  },
+  {
+    "name": "duration.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:51",
+    "scope": "duration"
+  },
+  {
+    "name": "duration.days",
+    "kind": "function",
+    "title": "days",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:114",
+    "scope": "duration"
+  },
+  {
+    "name": "duration.hours",
+    "kind": "function",
+    "title": "hours",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:105",
+    "scope": "duration"
+  },
+  {
+    "name": "duration.minutes",
+    "kind": "function",
+    "title": "minutes",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:96",
+    "scope": "duration"
+  },
+  {
+    "name": "duration.seconds",
+    "kind": "function",
+    "title": "seconds",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:87",
+    "scope": "duration"
+  },
+  {
+    "name": "duration.weeks",
+    "kind": "function",
+    "title": "weeks",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/duration.rs:123",
+    "scope": "duration"
+  },
+  {
+    "name": "eval",
+    "kind": "function",
+    "title": "Evaluate",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/mod.rs:266",
+    "scope": null
+  },
+  {
+    "name": "even",
+    "kind": "function",
+    "title": "even",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:927",
+    "scope": null
+  },
+  {
+    "name": "exp",
+    "kind": "function",
+    "title": "Exponential",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:163",
+    "scope": null
+  },
+  {
+    "name": "f64.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/float.rs:59",
+    "scope": "f64"
+  },
+  {
+    "name": "f64.from-bytes",
+    "kind": "function",
+    "title": "from-bytes",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/float.rs:120",
+    "scope": "f64"
+  },
+  {
+    "name": "f64.is-infinite",
+    "kind": "function",
+    "title": "is-infinite",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/float.rs:92",
+    "scope": "f64"
+  },
+  {
+    "name": "f64.is-nan",
+    "kind": "function",
+    "title": "is-nan",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/float.rs:77",
+    "scope": "f64"
+  },
+  {
+    "name": "f64.signum",
+    "kind": "function",
+    "title": "signum",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/float.rs:109",
+    "scope": "f64"
+  },
+  {
+    "name": "f64.to-bytes",
+    "kind": "function",
+    "title": "to-bytes",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/float.rs:157",
+    "scope": "f64"
+  },
+  {
+    "name": "fact",
+    "kind": "function",
+    "title": "Factorial",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:532",
+    "scope": null
+  },
+  {
+    "name": "floor",
+    "kind": "function",
+    "title": "floor",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:682",
+    "scope": null
+  },
+  {
+    "name": "fract",
+    "kind": "function",
+    "title": "Fractional",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:758",
+    "scope": null
+  },
+  {
+    "name": "function",
+    "kind": "type",
+    "title": "function",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/func.rs:139",
+    "scope": null
+  },
+  {
+    "name": "function.where-",
+    "kind": "function",
+    "title": "where-",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/func.rs:397",
+    "scope": "function"
+  },
+  {
+    "name": "function.with",
+    "kind": "function",
+    "title": "with",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/func.rs:372",
+    "scope": "function"
+  },
+  {
+    "name": "gcd",
+    "kind": "function",
+    "title": "Greatest Common Divisor",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:629",
+    "scope": null
+  },
+  {
+    "name": "i64.bit-and",
+    "kind": "function",
+    "title": "Bitwise AND",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:150",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.bit-lshift",
+    "kind": "function",
+    "title": "Bitwise Left Shift",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:203",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.bit-not",
+    "kind": "function",
+    "title": "Bitwise NOT",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:137",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.bit-or",
+    "kind": "function",
+    "title": "Bitwise OR",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:167",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.bit-rshift",
+    "kind": "function",
+    "title": "Bitwise Right Shift",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:225",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.bit-xor",
+    "kind": "function",
+    "title": "Bitwise XOR",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:184",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:62",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.from-bytes",
+    "kind": "function",
+    "title": "from-bytes",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:279",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.signum",
+    "kind": "function",
+    "title": "signum",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:123",
+    "scope": "i64"
+  },
+  {
+    "name": "i64.to-bytes",
+    "kind": "function",
+    "title": "to-bytes",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/int.rs:345",
+    "scope": "i64"
+  },
+  {
+    "name": "label",
+    "kind": "type",
+    "title": "label",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/label.rs:51",
+    "scope": null
+  },
+  {
+    "name": "label.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/label.rs:77",
+    "scope": "label"
+  },
+  {
+    "name": "lcm",
+    "kind": "function",
+    "title": "Least Common Multiple",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:651",
+    "scope": null
+  },
+  {
+    "name": "ln",
+    "kind": "function",
+    "title": "Natural Logarithm",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:508",
+    "scope": null
+  },
+  {
+    "name": "log",
+    "kind": "function",
+    "title": "Logarithm",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:467",
+    "scope": null
+  },
+  {
+    "name": "max",
+    "kind": "function",
+    "title": "Maximum",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:888",
+    "scope": null
+  },
+  {
+    "name": "min",
+    "kind": "function",
+    "title": "Minimum",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:871",
+    "scope": null
+  },
+  {
+    "name": "module",
+    "kind": "type",
+    "title": "module",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/module.rs:50",
+    "scope": null
+  },
+  {
+    "name": "none",
+    "kind": "type",
+    "title": "none",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/none.rs:25",
+    "scope": null
+  },
+  {
+    "name": "norm",
+    "kind": "function",
+    "title": "𝑝-Norm",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:1131",
+    "scope": null
+  },
+  {
+    "name": "odd",
+    "kind": "function",
+    "title": "odd",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:942",
+    "scope": null
+  },
+  {
+    "name": "panic",
+    "kind": "function",
+    "title": "panic",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/mod.rs:138",
+    "scope": null
+  },
+  {
+    "name": "perm",
+    "kind": "function",
+    "title": "Permutation",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:549",
+    "scope": null
+  },
+  {
+    "name": "plugin",
+    "kind": "function",
+    "title": "plugin",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/plugin.rs:150",
+    "scope": null
+  },
+  {
+    "name": "plugin.transition",
+    "kind": "function",
+    "title": "transition",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/plugin.rs:194",
+    "scope": "plugin"
+  },
+  {
+    "name": "pow",
+    "kind": "function",
+    "title": "Power",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:102",
+    "scope": null
+  },
+  {
+    "name": "quo",
+    "kind": "function",
+    "title": "Quotient",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:1090",
+    "scope": null
+  },
+  {
+    "name": "regex",
+    "kind": "type",
+    "title": "regex",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:976",
+    "scope": null
+  },
+  {
+    "name": "regex.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:989",
+    "scope": "regex"
+  },
+  {
+    "name": "rem",
+    "kind": "function",
+    "title": "Remainder",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:965",
+    "scope": null
+  },
+  {
+    "name": "rem-euclid",
+    "kind": "function",
+    "title": "Euclidean Remainder",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:1052",
+    "scope": null
+  },
+  {
+    "name": "repr",
+    "kind": "function",
+    "title": "Representation",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/repr.rs:43",
+    "scope": null
+  },
+  {
+    "name": "root",
+    "kind": "function",
+    "title": "root",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:212",
+    "scope": null
+  },
+  {
+    "name": "rooted-path.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/path.rs:148",
+    "scope": "rooted-path"
+  },
+  {
+    "name": "round",
+    "kind": "function",
+    "title": "round",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:804",
+    "scope": null
+  },
+  {
+    "name": "selector",
+    "kind": "type",
+    "title": "selector",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/selector.rs:75",
+    "scope": null
+  },
+  {
+    "name": "selector.after",
+    "kind": "function",
+    "title": "after",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/selector.rs:210",
+    "scope": "selector"
+  },
+  {
+    "name": "selector.and",
+    "kind": "function",
+    "title": "and",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/selector.rs:178",
+    "scope": "selector"
+  },
+  {
+    "name": "selector.before",
+    "kind": "function",
+    "title": "before",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/selector.rs:190",
+    "scope": "selector"
+  },
+  {
+    "name": "selector.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/selector.rs:157",
+    "scope": "selector"
+  },
+  {
+    "name": "selector.or",
+    "kind": "function",
+    "title": "or",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/selector.rs:167",
+    "scope": "selector"
+  },
+  {
+    "name": "sequence",
+    "kind": "element",
+    "title": "sequence",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:708",
+    "scope": null
+  },
+  {
+    "name": "sin",
+    "kind": "function",
+    "title": "Sine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:244",
+    "scope": null
+  },
+  {
+    "name": "sinh",
+    "kind": "function",
+    "title": "Hyperbolic Sine",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:372",
+    "scope": null
+  },
+  {
+    "name": "sqrt",
+    "kind": "function",
+    "title": "Square Root",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:193",
+    "scope": null
+  },
+  {
+    "name": "str",
+    "kind": "type",
+    "title": "String",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:77",
+    "scope": null
+  },
+  {
+    "name": "str.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:231",
+    "scope": "str"
+  },
+  {
+    "name": "str.clusters",
+    "kind": "function",
+    "title": "clusters",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:275",
+    "scope": "str"
+  },
+  {
+    "name": "str.codepoints",
+    "kind": "function",
+    "title": "codepoints",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:281",
+    "scope": "str"
+  },
+  {
+    "name": "str.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:152",
+    "scope": "str"
+  },
+  {
+    "name": "str.contains",
+    "kind": "function",
+    "title": "contains",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:346",
+    "scope": "str"
+  },
+  {
+    "name": "str.ends-with",
+    "kind": "function",
+    "title": "ends-with",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:372",
+    "scope": "str"
+  },
+  {
+    "name": "str.find",
+    "kind": "function",
+    "title": "find",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:399",
+    "scope": "str"
+  },
+  {
+    "name": "str.first",
+    "kind": "function",
+    "title": "first",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:194",
+    "scope": "str"
+  },
+  {
+    "name": "str.from-unicode",
+    "kind": "function",
+    "title": "from-unicode",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:307",
+    "scope": "str"
+  },
+  {
+    "name": "str.last",
+    "kind": "function",
+    "title": "last",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:213",
+    "scope": "str"
+  },
+  {
+    "name": "str.len",
+    "kind": "function",
+    "title": "Length",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:185",
+    "scope": "str"
+  },
+  {
+    "name": "str.match-",
+    "kind": "function",
+    "title": "match-",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:448",
+    "scope": "str"
+  },
+  {
+    "name": "str.matches",
+    "kind": "function",
+    "title": "matches",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:469",
+    "scope": "str"
+  },
+  {
+    "name": "str.normalize",
+    "kind": "function",
+    "title": "normalize",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:327",
+    "scope": "str"
+  },
+  {
+    "name": "str.position",
+    "kind": "function",
+    "title": "position",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:413",
+    "scope": "str"
+  },
+  {
+    "name": "str.replace",
+    "kind": "function",
+    "title": "replace",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:493",
+    "scope": "str"
+  },
+  {
+    "name": "str.rev",
+    "kind": "function",
+    "title": "Reverse",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:674",
+    "scope": "str"
+  },
+  {
+    "name": "str.slice",
+    "kind": "function",
+    "title": "slice",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:249",
+    "scope": "str"
+  },
+  {
+    "name": "str.split",
+    "kind": "function",
+    "title": "split",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:654",
+    "scope": "str"
+  },
+  {
+    "name": "str.starts-with",
+    "kind": "function",
+    "title": "starts-with",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:359",
+    "scope": "str"
+  },
+  {
+    "name": "str.to-unicode",
+    "kind": "function",
+    "title": "to-unicode",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:294",
+    "scope": "str"
+  },
+  {
+    "name": "str.trim",
+    "kind": "function",
+    "title": "trim",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/str.rs:563",
+    "scope": "str"
+  },
+  {
+    "name": "styled",
+    "kind": "element",
+    "title": "styled",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/content/mod.rs:745",
+    "scope": null
+  },
+  {
+    "name": "styles",
+    "kind": "type",
+    "title": "styles",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/styles.rs:24",
+    "scope": null
+  },
+  {
+    "name": "symbol",
+    "kind": "element",
+    "title": "symbol",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/symbol.rs:450",
+    "scope": null
+  },
+  {
+    "name": "symbol",
+    "kind": "type",
+    "title": "symbol",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/symbol.rs:51",
+    "scope": null
+  },
+  {
+    "name": "symbol.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/symbol.rs:219",
+    "scope": "symbol"
+  },
+  {
+    "name": "tan",
+    "kind": "function",
+    "title": "Tangent",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:286",
+    "scope": null
+  },
+  {
+    "name": "tanh",
+    "kind": "function",
+    "title": "Hyperbolic Tangent",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:400",
+    "scope": null
+  },
+  {
+    "name": "target",
+    "kind": "element",
+    "title": "target",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/target.rs:26",
+    "scope": null
+  },
+  {
+    "name": "target",
+    "kind": "function",
+    "title": "target",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/target.rs:75",
+    "scope": null
+  },
+  {
+    "name": "trunc",
+    "kind": "function",
+    "title": "Truncate",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/calc.rs:736",
+    "scope": null
+  },
+  {
+    "name": "type",
+    "kind": "type",
+    "title": "type",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/ty.rs:63",
+    "scope": null
+  },
+  {
+    "name": "type.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/ty.rs:137",
+    "scope": "type"
+  },
+  {
+    "name": "version",
+    "kind": "type",
+    "title": "version",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/version.rs:27",
+    "scope": null
+  },
+  {
+    "name": "version.at",
+    "kind": "function",
+    "title": "at",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/version.rs:108",
+    "scope": "version"
+  },
+  {
+    "name": "version.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/version.rs:84",
+    "scope": "version"
+  },
+  {
+    "name": "counter",
+    "kind": "type",
+    "title": "counter",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:210",
+    "scope": null
+  },
+  {
+    "name": "counter-display",
+    "kind": "element",
+    "title": "counter-display",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:664",
+    "scope": null
+  },
+  {
+    "name": "counter-update",
+    "kind": "element",
+    "title": "counter-update",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:639",
+    "scope": null
+  },
+  {
+    "name": "counter.at",
+    "kind": "function",
+    "title": "at",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:435",
+    "scope": "counter"
+  },
+  {
+    "name": "counter.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:321",
+    "scope": "counter"
+  },
+  {
+    "name": "counter.display",
+    "kind": "function",
+    "title": "display",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:361",
+    "scope": "counter"
+  },
+  {
+    "name": "counter.final-",
+    "kind": "function",
+    "title": "final-",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:450",
+    "scope": "counter"
+  },
+  {
+    "name": "counter.get",
+    "kind": "function",
+    "title": "get",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:343",
+    "scope": "counter"
+  },
+  {
+    "name": "counter.step",
+    "kind": "function",
+    "title": "step",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:469",
+    "scope": "counter"
+  },
+  {
+    "name": "counter.update",
+    "kind": "function",
+    "title": "update",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/counter.rs:485",
+    "scope": "counter"
+  },
+  {
+    "name": "here",
+    "kind": "function",
+    "title": "here",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/here.rs:47",
+    "scope": null
+  },
+  {
+    "name": "locate",
+    "kind": "function",
+    "title": "locate",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/locate.rs:27",
+    "scope": null
+  },
+  {
+    "name": "location",
+    "kind": "type",
+    "title": "location",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/location.rs:56",
+    "scope": null
+  },
+  {
+    "name": "location.page",
+    "kind": "function",
+    "title": "page",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/location.rs:98",
+    "scope": "location"
+  },
+  {
+    "name": "location.page-numbering",
+    "kind": "function",
+    "title": "page-numbering",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/location.rs:121",
+    "scope": "location"
+  },
+  {
+    "name": "location.position",
+    "kind": "function",
+    "title": "position",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/location.rs:109",
+    "scope": "location"
+  },
+  {
+    "name": "metadata",
+    "kind": "element",
+    "title": "metadata",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/metadata.rs:26",
+    "scope": null
+  },
+  {
+    "name": "query",
+    "kind": "function",
+    "title": "query",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/query.rs:149",
+    "scope": null
+  },
+  {
+    "name": "state",
+    "kind": "type",
+    "title": "state",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:189",
+    "scope": null
+  },
+  {
+    "name": "state-update",
+    "kind": "element",
+    "title": "state-update",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:391",
+    "scope": null
+  },
+  {
+    "name": "state.at",
+    "kind": "function",
+    "title": "at",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:272",
+    "scope": "state"
+  },
+  {
+    "name": "state.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:217",
+    "scope": "state"
+  },
+  {
+    "name": "state.final-",
+    "kind": "function",
+    "title": "final-",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:286",
+    "scope": "state"
+  },
+  {
+    "name": "state.get",
+    "kind": "function",
+    "title": "get",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:255",
+    "scope": "state"
+  },
+  {
+    "name": "state.update",
+    "kind": "function",
+    "title": "update",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/state.rs:328",
+    "scope": "state"
+  },
+  {
+    "name": "tag",
+    "kind": "element",
+    "title": "tag",
+    "category": "introspection",
+    "source": "crates/typst-library/src/introspection/tag.rs:68",
+    "scope": null
+  },
+  {
+    "name": "align",
+    "kind": "element",
+    "title": "align",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:76",
+    "scope": null
+  },
+  {
+    "name": "alignment",
+    "kind": "type",
+    "title": "alignment",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:142",
+    "scope": null
+  },
+  {
+    "name": "alignment.axis",
+    "kind": "function",
+    "title": "axis",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:195",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.bottom",
+    "kind": "member",
+    "title": "BOTTOM",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:183",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.center",
+    "kind": "member",
+    "title": "CENTER",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:178",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.end",
+    "kind": "member",
+    "title": "END",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:180",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.horizon",
+    "kind": "member",
+    "title": "HORIZON",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:182",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.inv",
+    "kind": "function",
+    "title": "Inverse",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:212",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.left",
+    "kind": "member",
+    "title": "LEFT",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:177",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.right",
+    "kind": "member",
+    "title": "RIGHT",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:179",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.start",
+    "kind": "member",
+    "title": "START",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:176",
+    "scope": "alignment"
+  },
+  {
+    "name": "alignment.top",
+    "kind": "member",
+    "title": "TOP",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/align.rs:181",
+    "scope": "alignment"
+  },
+  {
+    "name": "angle",
+    "kind": "type",
+    "title": "angle",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/angle.rs:25",
+    "scope": null
+  },
+  {
+    "name": "angle.deg",
+    "kind": "function",
+    "title": "Degrees",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/angle.rs:150",
+    "scope": "angle"
+  },
+  {
+    "name": "angle.rad",
+    "kind": "function",
+    "title": "Radians",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/angle.rs:144",
+    "scope": "angle"
+  },
+  {
+    "name": "block",
+    "kind": "element",
+    "title": "block",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/container.rs:228",
+    "scope": null
+  },
+  {
+    "name": "box",
+    "kind": "element",
+    "title": "box",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/container.rs:31",
+    "scope": null
+  },
+  {
+    "name": "cell",
+    "kind": "element",
+    "title": "Grid Cell",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:769",
+    "scope": null
+  },
+  {
+    "name": "colbreak",
+    "kind": "element",
+    "title": "Column Break",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/columns.rs:98",
+    "scope": null
+  },
+  {
+    "name": "columns",
+    "kind": "element",
+    "title": "columns",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/columns.rs:59",
+    "scope": null
+  },
+  {
+    "name": "direction",
+    "kind": "type",
+    "title": "direction",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:23",
+    "scope": null
+  },
+  {
+    "name": "direction.axis",
+    "kind": "function",
+    "title": "axis",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:97",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.btt",
+    "kind": "member",
+    "title": "BTT",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:51",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.end",
+    "kind": "function",
+    "title": "end",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:147",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.from",
+    "kind": "function",
+    "title": "from",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:62",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.inv",
+    "kind": "function",
+    "title": "Inverse",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:165",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.ltr",
+    "kind": "member",
+    "title": "LTR",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:48",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.rtl",
+    "kind": "member",
+    "title": "RTL",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:49",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.sign",
+    "kind": "function",
+    "title": "sign",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:113",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.start",
+    "kind": "function",
+    "title": "start",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:129",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.to",
+    "kind": "function",
+    "title": "to",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:80",
+    "scope": "direction"
+  },
+  {
+    "name": "direction.ttb",
+    "kind": "member",
+    "title": "TTB",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/dir.rs:50",
+    "scope": "direction"
+  },
+  {
+    "name": "flush",
+    "kind": "element",
+    "title": "flush",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/place.rs:213",
+    "scope": null
+  },
+  {
+    "name": "footer",
+    "kind": "element",
+    "title": "Grid Footer",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:605",
+    "scope": null
+  },
+  {
+    "name": "fraction",
+    "kind": "type",
+    "title": "fraction",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/fr.rs:25",
+    "scope": null
+  },
+  {
+    "name": "grid",
+    "kind": "element",
+    "title": "grid",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:184",
+    "scope": null
+  },
+  {
+    "name": "h",
+    "kind": "element",
+    "title": "Spacing (H)",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/spacing.rs:34",
+    "scope": null
+  },
+  {
+    "name": "header",
+    "kind": "element",
+    "title": "Grid Header",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:577",
+    "scope": null
+  },
+  {
+    "name": "hide",
+    "kind": "element",
+    "title": "hide",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/hide.rs:26",
+    "scope": null
+  },
+  {
+    "name": "hline",
+    "kind": "element",
+    "title": "Grid Horizontal Line",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:623",
+    "scope": null
+  },
+  {
+    "name": "inline",
+    "kind": "element",
+    "title": "inline",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/container.rs:141",
+    "scope": null
+  },
+  {
+    "name": "layout",
+    "kind": "function",
+    "title": "layout",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/layout.rs:66",
+    "scope": null
+  },
+  {
+    "name": "layout",
+    "kind": "element",
+    "title": "layout",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/layout.rs:84",
+    "scope": null
+  },
+  {
+    "name": "length",
+    "kind": "type",
+    "title": "length",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/length.rs:44",
+    "scope": null
+  },
+  {
+    "name": "length.cm",
+    "kind": "function",
+    "title": "Centimeters",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/length.rs:125",
+    "scope": "length"
+  },
+  {
+    "name": "length.inches",
+    "kind": "function",
+    "title": "inches",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/length.rs:135",
+    "scope": "length"
+  },
+  {
+    "name": "length.mm",
+    "kind": "function",
+    "title": "Millimeters",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/length.rs:115",
+    "scope": "length"
+  },
+  {
+    "name": "length.pt",
+    "kind": "function",
+    "title": "Points",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/length.rs:105",
+    "scope": "length"
+  },
+  {
+    "name": "length.to-absolute",
+    "kind": "function",
+    "title": "to-absolute",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/length.rs:158",
+    "scope": "length"
+  },
+  {
+    "name": "measure",
+    "kind": "function",
+    "title": "measure",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/measure.rs:47",
+    "scope": null
+  },
+  {
+    "name": "move",
+    "kind": "element",
+    "title": "move",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/transform.rs:29",
+    "scope": null
+  },
+  {
+    "name": "pad",
+    "kind": "element",
+    "title": "Padding",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/pad.rs:18",
+    "scope": null
+  },
+  {
+    "name": "page",
+    "kind": "element",
+    "title": "page",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/page.rs:55",
+    "scope": null
+  },
+  {
+    "name": "pagebreak",
+    "kind": "element",
+    "title": "Page Break",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/page.rs:484",
+    "scope": null
+  },
+  {
+    "name": "place",
+    "kind": "element",
+    "title": "place",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/place.rs:75",
+    "scope": null
+  },
+  {
+    "name": "ratio",
+    "kind": "type",
+    "title": "ratio",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/ratio.rs:42",
+    "scope": null
+  },
+  {
+    "name": "relative",
+    "kind": "type",
+    "title": "Relative Length",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/rel.rs:71",
+    "scope": null
+  },
+  {
+    "name": "repeat",
+    "kind": "element",
+    "title": "repeat",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/repeat.rs:32",
+    "scope": null
+  },
+  {
+    "name": "rotate",
+    "kind": "element",
+    "title": "rotate",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/transform.rs:56",
+    "scope": null
+  },
+  {
+    "name": "scale",
+    "kind": "element",
+    "title": "scale",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/transform.rs:112",
+    "scope": null
+  },
+  {
+    "name": "skew",
+    "kind": "element",
+    "title": "skew",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/transform.rs:194",
+    "scope": null
+  },
+  {
+    "name": "stack",
+    "kind": "element",
+    "title": "stack",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/stack.rs:26",
+    "scope": null
+  },
+  {
+    "name": "v",
+    "kind": "element",
+    "title": "Spacing (V)",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/spacing.rs:96",
+    "scope": null
+  },
+  {
+    "name": "vline",
+    "kind": "element",
+    "title": "Grid Vertical Line",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:675",
+    "scope": null
+  },
+  {
+    "name": "cbor",
+    "kind": "function",
+    "title": "CBOR",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/cbor.rs:49",
+    "scope": null
+  },
+  {
+    "name": "cbor.encode",
+    "kind": "function",
+    "title": "Encode CBOR",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/cbor.rs:78",
+    "scope": "cbor"
+  },
+  {
+    "name": "csv",
+    "kind": "function",
+    "title": "CSV",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/csv.rs:27",
+    "scope": null
+  },
+  {
+    "name": "json",
+    "kind": "function",
+    "title": "JSON",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/json.rs:78",
+    "scope": null
+  },
+  {
+    "name": "json.encode",
+    "kind": "function",
+    "title": "Encode JSON",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/json.rs:125",
+    "scope": "json"
+  },
+  {
+    "name": "read",
+    "kind": "function",
+    "title": "read",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/read.rs:24",
+    "scope": null
+  },
+  {
+    "name": "toml",
+    "kind": "function",
+    "title": "TOML",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/toml.rs:65",
+    "scope": null
+  },
+  {
+    "name": "toml.encode",
+    "kind": "function",
+    "title": "Encode TOML",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/toml.rs:93",
+    "scope": "toml"
+  },
+  {
+    "name": "xml",
+    "kind": "function",
+    "title": "XML",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/xml.rs:58",
+    "scope": null
+  },
+  {
+    "name": "yaml",
+    "kind": "function",
+    "title": "YAML",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/yaml.rs:72",
+    "scope": null
+  },
+  {
+    "name": "yaml.encode",
+    "kind": "function",
+    "title": "Encode YAML",
+    "category": "loading",
+    "source": "crates/typst-library/src/loading/yaml.rs:101",
+    "scope": "yaml"
+  },
+  {
+    "name": "abs",
+    "kind": "function",
+    "title": "abs",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:112",
+    "scope": null
+  },
+  {
+    "name": "accent",
+    "kind": "element",
+    "title": "accent",
+    "category": "math",
+    "source": "crates/typst-library/src/math/accent.rs:31",
+    "scope": null
+  },
+  {
+    "name": "align-point",
+    "kind": "element",
+    "title": "Alignment Point",
+    "category": "math",
+    "source": "crates/typst-library/src/math/mod.rs:115",
+    "scope": null
+  },
+  {
+    "name": "attach",
+    "kind": "element",
+    "title": "attach",
+    "category": "math",
+    "source": "crates/typst-library/src/math/attach.rs:20",
+    "scope": null
+  },
+  {
+    "name": "bb",
+    "kind": "function",
+    "title": "Blackboard Bold",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:156",
+    "scope": null
+  },
+  {
+    "name": "binom",
+    "kind": "element",
+    "title": "Binomial",
+    "category": "math",
+    "source": "crates/typst-library/src/math/frac.rs:107",
+    "scope": null
+  },
+  {
+    "name": "bold",
+    "kind": "function",
+    "title": "bold",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:15",
+    "scope": null
+  },
+  {
+    "name": "cal",
+    "kind": "function",
+    "title": "Calligraphic",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:79",
+    "scope": null
+  },
+  {
+    "name": "cancel",
+    "kind": "element",
+    "title": "cancel",
+    "category": "math",
+    "source": "crates/typst-library/src/math/cancel.rs:18",
+    "scope": null
+  },
+  {
+    "name": "cases",
+    "kind": "element",
+    "title": "cases",
+    "category": "math",
+    "source": "crates/typst-library/src/math/matrix.rs:231",
+    "scope": null
+  },
+  {
+    "name": "ceil",
+    "kind": "function",
+    "title": "ceil",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:76",
+    "scope": null
+  },
+  {
+    "name": "class",
+    "kind": "element",
+    "title": "class",
+    "category": "math",
+    "source": "crates/typst-library/src/math/mod.rs:142",
+    "scope": null
+  },
+  {
+    "name": "display",
+    "kind": "function",
+    "title": "Display Size",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:171",
+    "scope": null
+  },
+  {
+    "name": "equation",
+    "kind": "element",
+    "title": "equation",
+    "category": "math",
+    "source": "crates/typst-library/src/math/equation.rs:50",
+    "scope": null
+  },
+  {
+    "name": "floor",
+    "kind": "function",
+    "title": "floor",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:58",
+    "scope": null
+  },
+  {
+    "name": "frac",
+    "kind": "element",
+    "title": "Fraction",
+    "category": "math",
+    "source": "crates/typst-library/src/math/frac.rs:25",
+    "scope": null
+  },
+  {
+    "name": "frak",
+    "kind": "function",
+    "title": "Fraktur",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:125",
+    "scope": null
+  },
+  {
+    "name": "inline",
+    "kind": "function",
+    "title": "Inline Size",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:193",
+    "scope": null
+  },
+  {
+    "name": "italic",
+    "kind": "function",
+    "title": "italic",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:39",
+    "scope": null
+  },
+  {
+    "name": "limits",
+    "kind": "element",
+    "title": "limits",
+    "category": "math",
+    "source": "crates/typst-library/src/math/attach.rs:86",
+    "scope": null
+  },
+  {
+    "name": "lr",
+    "kind": "element",
+    "title": "Left/Right",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:24",
+    "scope": null
+  },
+  {
+    "name": "mat",
+    "kind": "element",
+    "title": "Matrix",
+    "category": "math",
+    "source": "crates/typst-library/src/math/matrix.rs:92",
+    "scope": null
+  },
+  {
+    "name": "mid",
+    "kind": "element",
+    "title": "mid",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:46",
+    "scope": null
+  },
+  {
+    "name": "mono",
+    "kind": "function",
+    "title": "Monospace",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:138",
+    "scope": null
+  },
+  {
+    "name": "norm",
+    "kind": "function",
+    "title": "norm",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:130",
+    "scope": null
+  },
+  {
+    "name": "op",
+    "kind": "element",
+    "title": "Text Operator",
+    "category": "math",
+    "source": "crates/typst-library/src/math/op.rs:24",
+    "scope": null
+  },
+  {
+    "name": "overbrace",
+    "kind": "element",
+    "title": "overbrace",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:50",
+    "scope": null
+  },
+  {
+    "name": "overbracket",
+    "kind": "element",
+    "title": "overbracket",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:82",
+    "scope": null
+  },
+  {
+    "name": "overline",
+    "kind": "element",
+    "title": "overline",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:22",
+    "scope": null
+  },
+  {
+    "name": "overparen",
+    "kind": "element",
+    "title": "overparen",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:114",
+    "scope": null
+  },
+  {
+    "name": "overshell",
+    "kind": "element",
+    "title": "overshell",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:148",
+    "scope": null
+  },
+  {
+    "name": "primes",
+    "kind": "element",
+    "title": "primes",
+    "category": "math",
+    "source": "crates/typst-library/src/math/attach.rs:62",
+    "scope": null
+  },
+  {
+    "name": "root",
+    "kind": "element",
+    "title": "root",
+    "category": "math",
+    "source": "crates/typst-library/src/math/root.rs:26",
+    "scope": null
+  },
+  {
+    "name": "round",
+    "kind": "function",
+    "title": "round",
+    "category": "math",
+    "source": "crates/typst-library/src/math/lr.rs:94",
+    "scope": null
+  },
+  {
+    "name": "sans",
+    "kind": "function",
+    "title": "Sans Serif",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:63",
+    "scope": null
+  },
+  {
+    "name": "scr",
+    "kind": "function",
+    "title": "Script Style",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:112",
+    "scope": null
+  },
+  {
+    "name": "script",
+    "kind": "function",
+    "title": "Script Size",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:214",
+    "scope": null
+  },
+  {
+    "name": "scripts",
+    "kind": "element",
+    "title": "scripts",
+    "category": "math",
+    "source": "crates/typst-library/src/math/attach.rs:74",
+    "scope": null
+  },
+  {
+    "name": "serif",
+    "kind": "function",
+    "title": "serif",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:50",
+    "scope": null
+  },
+  {
+    "name": "sqrt",
+    "kind": "function",
+    "title": "Square Root",
+    "category": "math",
+    "source": "crates/typst-library/src/math/root.rs:12",
+    "scope": null
+  },
+  {
+    "name": "sscript",
+    "kind": "function",
+    "title": "Script-Script Size",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:236",
+    "scope": null
+  },
+  {
+    "name": "stretch",
+    "kind": "element",
+    "title": "stretch",
+    "category": "math",
+    "source": "crates/typst-library/src/math/attach.rs:115",
+    "scope": null
+  },
+  {
+    "name": "underbrace",
+    "kind": "element",
+    "title": "underbrace",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:34",
+    "scope": null
+  },
+  {
+    "name": "underbracket",
+    "kind": "element",
+    "title": "underbracket",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:66",
+    "scope": null
+  },
+  {
+    "name": "underline",
+    "kind": "element",
+    "title": "underline",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:10",
+    "scope": null
+  },
+  {
+    "name": "underparen",
+    "kind": "element",
+    "title": "underparen",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:98",
+    "scope": null
+  },
+  {
+    "name": "undershell",
+    "kind": "element",
+    "title": "undershell",
+    "category": "math",
+    "source": "crates/typst-library/src/math/underover.rs:131",
+    "scope": null
+  },
+  {
+    "name": "upright",
+    "kind": "function",
+    "title": "upright",
+    "category": "math",
+    "source": "crates/typst-library/src/math/style.rs:28",
+    "scope": null
+  },
+  {
+    "name": "vec",
+    "kind": "element",
+    "title": "Vector",
+    "category": "math",
+    "source": "crates/typst-library/src/math/matrix.rs:33",
+    "scope": null
+  },
+  {
+    "name": "bibliography",
+    "kind": "element",
+    "title": "bibliography",
+    "category": "model",
+    "source": "crates/typst-library/src/model/bibliography.rs:87",
+    "scope": null
+  },
+  {
+    "name": "caption",
+    "kind": "element",
+    "title": "caption",
+    "category": "model",
+    "source": "crates/typst-library/src/model/figure.rs:495",
+    "scope": null
+  },
+  {
+    "name": "cell",
+    "kind": "element",
+    "title": "Table Cell",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:735",
+    "scope": null
+  },
+  {
+    "name": "cite",
+    "kind": "element",
+    "title": "cite",
+    "category": "model",
+    "source": "crates/typst-library/src/model/cite.rs:46",
+    "scope": null
+  },
+  {
+    "name": "cite-group",
+    "kind": "element",
+    "title": "cite-group",
+    "category": "model",
+    "source": "crates/typst-library/src/model/cite.rs:155",
+    "scope": null
+  },
+  {
+    "name": "csl-indent",
+    "kind": "element",
+    "title": "csl-indent",
+    "category": "model",
+    "source": "crates/typst-library/src/model/bibliography.rs:1184",
+    "scope": null
+  },
+  {
+    "name": "csl-light",
+    "kind": "element",
+    "title": "csl-light",
+    "category": "model",
+    "source": "crates/typst-library/src/model/bibliography.rs:1172",
+    "scope": null
+  },
+  {
+    "name": "direct-link",
+    "kind": "element",
+    "title": "direct-link",
+    "category": "model",
+    "source": "crates/typst-library/src/model/link.rs:377",
+    "scope": null
+  },
+  {
+    "name": "document",
+    "kind": "element",
+    "title": "document",
+    "category": "model",
+    "source": "crates/typst-library/src/model/document.rs:28",
+    "scope": null
+  },
+  {
+    "name": "emph",
+    "kind": "element",
+    "title": "Emphasis",
+    "category": "model",
+    "source": "crates/typst-library/src/model/emph.rs:28",
+    "scope": null
+  },
+  {
+    "name": "entry",
+    "kind": "element",
+    "title": "Footnote Entry",
+    "category": "model",
+    "source": "crates/typst-library/src/model/footnote.rs:216",
+    "scope": null
+  },
+  {
+    "name": "entry",
+    "kind": "element",
+    "title": "Outline Entry",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:474",
+    "scope": null
+  },
+  {
+    "name": "entry.body",
+    "kind": "function",
+    "title": "body",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:667",
+    "scope": "entry"
+  },
+  {
+    "name": "entry.indented",
+    "kind": "function",
+    "title": "indented",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:534",
+    "scope": "entry"
+  },
+  {
+    "name": "entry.inner",
+    "kind": "function",
+    "title": "inner",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:651",
+    "scope": "entry"
+  },
+  {
+    "name": "entry.page",
+    "kind": "function",
+    "title": "page",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:674",
+    "scope": "entry"
+  },
+  {
+    "name": "entry.prefix",
+    "kind": "function",
+    "title": "prefix",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:631",
+    "scope": "entry"
+  },
+  {
+    "name": "enum",
+    "kind": "element",
+    "title": "Numbered List",
+    "category": "model",
+    "source": "crates/typst-library/src/model/enum.rs:70",
+    "scope": null
+  },
+  {
+    "name": "figure",
+    "kind": "element",
+    "title": "figure",
+    "category": "model",
+    "source": "crates/typst-library/src/model/figure.rs:121",
+    "scope": null
+  },
+  {
+    "name": "footer",
+    "kind": "element",
+    "title": "Table Footer",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:528",
+    "scope": null
+  },
+  {
+    "name": "footnote",
+    "kind": "element",
+    "title": "footnote",
+    "category": "model",
+    "source": "crates/typst-library/src/model/footnote.rs:63",
+    "scope": null
+  },
+  {
+    "name": "footnote-marker",
+    "kind": "element",
+    "title": "footnote-marker",
+    "category": "model",
+    "source": "crates/typst-library/src/model/footnote.rs:343",
+    "scope": null
+  },
+  {
+    "name": "header",
+    "kind": "element",
+    "title": "Table Header",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:498",
+    "scope": null
+  },
+  {
+    "name": "heading",
+    "kind": "element",
+    "title": "heading",
+    "category": "model",
+    "source": "crates/typst-library/src/model/heading.rs:78",
+    "scope": null
+  },
+  {
+    "name": "hline",
+    "kind": "element",
+    "title": "Table Horizontal Line",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:571",
+    "scope": null
+  },
+  {
+    "name": "item",
+    "kind": "element",
+    "title": "Numbered List Item",
+    "category": "model",
+    "source": "crates/typst-library/src/model/enum.rs:236",
+    "scope": null
+  },
+  {
+    "name": "item",
+    "kind": "element",
+    "title": "Bullet List Item",
+    "category": "model",
+    "source": "crates/typst-library/src/model/list.rs:140",
+    "scope": null
+  },
+  {
+    "name": "item",
+    "kind": "element",
+    "title": "Term List Item",
+    "category": "model",
+    "source": "crates/typst-library/src/model/terms.rs:130",
+    "scope": null
+  },
+  {
+    "name": "line",
+    "kind": "element",
+    "title": "Paragraph Line",
+    "category": "model",
+    "source": "crates/typst-library/src/model/par.rs:789",
+    "scope": null
+  },
+  {
+    "name": "link",
+    "kind": "element",
+    "title": "link",
+    "category": "model",
+    "source": "crates/typst-library/src/model/link.rs:100",
+    "scope": null
+  },
+  {
+    "name": "link-marker",
+    "kind": "element",
+    "title": "link-marker",
+    "category": "model",
+    "source": "crates/typst-library/src/model/link.rs:398",
+    "scope": null
+  },
+  {
+    "name": "list",
+    "kind": "element",
+    "title": "Bullet List",
+    "category": "model",
+    "source": "crates/typst-library/src/model/list.rs:45",
+    "scope": null
+  },
+  {
+    "name": "numbering",
+    "kind": "function",
+    "title": "numbering",
+    "category": "model",
+    "source": "crates/typst-library/src/model/numbering.rs:54",
+    "scope": null
+  },
+  {
+    "name": "outline",
+    "kind": "element",
+    "title": "outline",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:151",
+    "scope": null
+  },
+  {
+    "name": "par",
+    "kind": "element",
+    "title": "Paragraph",
+    "category": "model",
+    "source": "crates/typst-library/src/model/par.rs:98",
+    "scope": null
+  },
+  {
+    "name": "par-line-marker",
+    "kind": "element",
+    "title": "par-line-marker",
+    "category": "model",
+    "source": "crates/typst-library/src/model/par.rs:927",
+    "scope": null
+  },
+  {
+    "name": "parbreak",
+    "kind": "element",
+    "title": "Paragraph Break",
+    "category": "model",
+    "source": "crates/typst-library/src/model/par.rs:724",
+    "scope": null
+  },
+  {
+    "name": "quote",
+    "kind": "element",
+    "title": "quote",
+    "category": "model",
+    "source": "crates/typst-library/src/model/quote.rs:45",
+    "scope": null
+  },
+  {
+    "name": "ref",
+    "kind": "element",
+    "title": "Reference",
+    "category": "model",
+    "source": "crates/typst-library/src/model/reference.rs:138",
+    "scope": null
+  },
+  {
+    "name": "strong",
+    "kind": "element",
+    "title": "Strong Emphasis",
+    "category": "model",
+    "source": "crates/typst-library/src/model/strong.rs:23",
+    "scope": null
+  },
+  {
+    "name": "table",
+    "kind": "element",
+    "title": "table",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:139",
+    "scope": null
+  },
+  {
+    "name": "terms",
+    "kind": "element",
+    "title": "Term List",
+    "category": "model",
+    "source": "crates/typst-library/src/model/terms.rs:26",
+    "scope": null
+  },
+  {
+    "name": "title",
+    "kind": "element",
+    "title": "title",
+    "category": "model",
+    "source": "crates/typst-library/src/model/title.rs:33",
+    "scope": null
+  },
+  {
+    "name": "vline",
+    "kind": "element",
+    "title": "Table Vertical Line",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:615",
+    "scope": null
+  },
+  {
+    "name": "highlight",
+    "kind": "element",
+    "title": "highlight",
+    "category": "text",
+    "source": "crates/typst-library/src/text/deco.rs:215",
+    "scope": null
+  },
+  {
+    "name": "line",
+    "kind": "element",
+    "title": "Raw Text / Code Line",
+    "category": "text",
+    "source": "crates/typst-library/src/text/raw.rs:677",
+    "scope": null
+  },
+  {
+    "name": "linebreak",
+    "kind": "element",
+    "title": "Line Break",
+    "category": "text",
+    "source": "crates/typst-library/src/text/linebreak.rs:23",
+    "scope": null
+  },
+  {
+    "name": "lorem",
+    "kind": "function",
+    "title": "lorem",
+    "category": "text",
+    "source": "crates/typst-library/src/text/lorem.rs:19",
+    "scope": null
+  },
+  {
+    "name": "lower",
+    "kind": "function",
+    "title": "Lowercase",
+    "category": "text",
+    "source": "crates/typst-library/src/text/case.rs:13",
+    "scope": null
+  },
+  {
+    "name": "overline",
+    "kind": "element",
+    "title": "overline",
+    "category": "text",
+    "source": "crates/typst-library/src/text/deco.rs:82",
+    "scope": null
+  },
+  {
+    "name": "smallcaps",
+    "kind": "element",
+    "title": "Small Capitals",
+    "category": "text",
+    "source": "crates/typst-library/src/text/smallcaps.rs:44",
+    "scope": null
+  },
+  {
+    "name": "smartquote",
+    "kind": "element",
+    "title": "smartquote",
+    "category": "text",
+    "source": "crates/typst-library/src/text/smartquote.rs:33",
+    "scope": null
+  },
+  {
+    "name": "space",
+    "kind": "element",
+    "title": "space",
+    "category": "text",
+    "source": "crates/typst-library/src/text/space.rs:10",
+    "scope": null
+  },
+  {
+    "name": "strike",
+    "kind": "element",
+    "title": "Strikethrough",
+    "category": "text",
+    "source": "crates/typst-library/src/text/deco.rs:156",
+    "scope": null
+  },
+  {
+    "name": "sub",
+    "kind": "element",
+    "title": "Subscript",
+    "category": "text",
+    "source": "crates/typst-library/src/text/shift.rs:17",
+    "scope": null
+  },
+  {
+    "name": "super",
+    "kind": "element",
+    "title": "Superscript",
+    "category": "text",
+    "source": "crates/typst-library/src/text/shift.rs:72",
+    "scope": null
+  },
+  {
+    "name": "text",
+    "kind": "element",
+    "title": "text",
+    "category": "text",
+    "source": "crates/typst-library/src/text/mod.rs:95",
+    "scope": null
+  },
+  {
+    "name": "underline",
+    "kind": "element",
+    "title": "underline",
+    "category": "text",
+    "source": "crates/typst-library/src/text/deco.rs:14",
+    "scope": null
+  },
+  {
+    "name": "upper",
+    "kind": "function",
+    "title": "Uppercase",
+    "category": "text",
+    "source": "crates/typst-library/src/text/case.rs:29",
+    "scope": null
+  },
+  {
+    "name": "circle",
+    "kind": "element",
+    "title": "circle",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/shape.rs:271",
+    "scope": null
+  },
+  {
+    "name": "close",
+    "kind": "element",
+    "title": "Curve Close",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:365",
+    "scope": null
+  },
+  {
+    "name": "color",
+    "kind": "type",
+    "title": "color",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:194",
+    "scope": null
+  },
+  {
+    "name": "color.aqua",
+    "kind": "member",
+    "title": "AQUA",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:224",
+    "scope": "color"
+  },
+  {
+    "name": "color.black",
+    "kind": "member",
+    "title": "BLACK",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:218",
+    "scope": "color"
+  },
+  {
+    "name": "color.blue",
+    "kind": "member",
+    "title": "BLUE",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:223",
+    "scope": "color"
+  },
+  {
+    "name": "color.cmyk",
+    "kind": "function",
+    "title": "CMYK",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:548",
+    "scope": "color"
+  },
+  {
+    "name": "color.components",
+    "kind": "function",
+    "title": "components",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:726",
+    "scope": "color"
+  },
+  {
+    "name": "color.darken",
+    "kind": "function",
+    "title": "darken",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:866",
+    "scope": "color"
+  },
+  {
+    "name": "color.desaturate",
+    "kind": "function",
+    "title": "desaturate",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:912",
+    "scope": "color"
+  },
+  {
+    "name": "color.eastern",
+    "kind": "member",
+    "title": "EASTERN",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:226",
+    "scope": "color"
+  },
+  {
+    "name": "color.fuchsia",
+    "kind": "member",
+    "title": "FUCHSIA",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:228",
+    "scope": "color"
+  },
+  {
+    "name": "color.gray",
+    "kind": "member",
+    "title": "GRAY",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:219",
+    "scope": "color"
+  },
+  {
+    "name": "color.green",
+    "kind": "member",
+    "title": "GREEN",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:234",
+    "scope": "color"
+  },
+  {
+    "name": "color.hsl",
+    "kind": "function",
+    "title": "HSL",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:605",
+    "scope": "color"
+  },
+  {
+    "name": "color.hsv",
+    "kind": "function",
+    "title": "HSV",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:662",
+    "scope": "color"
+  },
+  {
+    "name": "color.lighten",
+    "kind": "function",
+    "title": "lighten",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:846",
+    "scope": "color"
+  },
+  {
+    "name": "color.lime",
+    "kind": "member",
+    "title": "LIME",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:235",
+    "scope": "color"
+  },
+  {
+    "name": "color.linear-rgb",
+    "kind": "function",
+    "title": "Linear RGB",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:417",
+    "scope": "color"
+  },
+  {
+    "name": "color.luma",
+    "kind": "function",
+    "title": "luma",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:251",
+    "scope": "color"
+  },
+  {
+    "name": "color.map",
+    "kind": "member",
+    "title": "MAP",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:216",
+    "scope": "color"
+  },
+  {
+    "name": "color.maroon",
+    "kind": "member",
+    "title": "MAROON",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:229",
+    "scope": "color"
+  },
+  {
+    "name": "color.mix",
+    "kind": "function",
+    "title": "mix",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:1034",
+    "scope": "color"
+  },
+  {
+    "name": "color.navy",
+    "kind": "member",
+    "title": "NAVY",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:222",
+    "scope": "color"
+  },
+  {
+    "name": "color.negate",
+    "kind": "function",
+    "title": "negate",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:945",
+    "scope": "color"
+  },
+  {
+    "name": "color.oklab",
+    "kind": "function",
+    "title": "oklab",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:301",
+    "scope": "color"
+  },
+  {
+    "name": "color.oklch",
+    "kind": "function",
+    "title": "oklch",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:357",
+    "scope": "color"
+  },
+  {
+    "name": "color.olive",
+    "kind": "member",
+    "title": "OLIVE",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:233",
+    "scope": "color"
+  },
+  {
+    "name": "color.opacify",
+    "kind": "function",
+    "title": "opacify",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:1084",
+    "scope": "color"
+  },
+  {
+    "name": "color.orange",
+    "kind": "member",
+    "title": "ORANGE",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:231",
+    "scope": "color"
+  },
+  {
+    "name": "color.purple",
+    "kind": "member",
+    "title": "PURPLE",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:227",
+    "scope": "color"
+  },
+  {
+    "name": "color.red",
+    "kind": "member",
+    "title": "RED",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:230",
+    "scope": "color"
+  },
+  {
+    "name": "color.rgb",
+    "kind": "function",
+    "title": "RGB",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:472",
+    "scope": "color"
+  },
+  {
+    "name": "color.rotate",
+    "kind": "function",
+    "title": "rotate",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:989",
+    "scope": "color"
+  },
+  {
+    "name": "color.saturate",
+    "kind": "function",
+    "title": "saturate",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:886",
+    "scope": "color"
+  },
+  {
+    "name": "color.silver",
+    "kind": "member",
+    "title": "SILVER",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:221",
+    "scope": "color"
+  },
+  {
+    "name": "color.space",
+    "kind": "function",
+    "title": "space",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:818",
+    "scope": "color"
+  },
+  {
+    "name": "color.teal",
+    "kind": "member",
+    "title": "TEAL",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:225",
+    "scope": "color"
+  },
+  {
+    "name": "color.to-hex",
+    "kind": "function",
+    "title": "to-hex",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:835",
+    "scope": "color"
+  },
+  {
+    "name": "color.transparentize",
+    "kind": "function",
+    "title": "transparentize",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:1063",
+    "scope": "color"
+  },
+  {
+    "name": "color.white",
+    "kind": "member",
+    "title": "WHITE",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:220",
+    "scope": "color"
+  },
+  {
+    "name": "color.yellow",
+    "kind": "member",
+    "title": "YELLOW",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/color.rs:232",
+    "scope": "color"
+  },
+  {
+    "name": "cubic",
+    "kind": "element",
+    "title": "Curve Cubic Segment",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:284",
+    "scope": null
+  },
+  {
+    "name": "curve",
+    "kind": "element",
+    "title": "curve",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:43",
+    "scope": null
+  },
+  {
+    "name": "ellipse",
+    "kind": "element",
+    "title": "ellipse",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/shape.rs:221",
+    "scope": null
+  },
+  {
+    "name": "gradient",
+    "kind": "type",
+    "title": "gradient",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:178",
+    "scope": null
+  },
+  {
+    "name": "gradient.angle",
+    "kind": "function",
+    "title": "angle",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:707",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.center",
+    "kind": "function",
+    "title": "center",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:719",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.conic",
+    "kind": "function",
+    "title": "Conic Gradient",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:406",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.focal-center",
+    "kind": "function",
+    "title": "focal-center",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:743",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.focal-radius",
+    "kind": "function",
+    "title": "focal-radius",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:755",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.kind",
+    "kind": "function",
+    "title": "kind",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:644",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.linear",
+    "kind": "function",
+    "title": "Linear Gradient",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:200",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.radius",
+    "kind": "function",
+    "title": "radius",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:731",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.relative",
+    "kind": "function",
+    "title": "relative",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:695",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.repeat",
+    "kind": "function",
+    "title": "repeat",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:564",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.sample",
+    "kind": "function",
+    "title": "sample",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:769",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.samples",
+    "kind": "function",
+    "title": "samples",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:786",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.sharp",
+    "kind": "function",
+    "title": "sharp",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:469",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.space",
+    "kind": "function",
+    "title": "space",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:685",
+    "scope": "gradient"
+  },
+  {
+    "name": "gradient.stops",
+    "kind": "function",
+    "title": "stops",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/gradient.rs:654",
+    "scope": "gradient"
+  },
+  {
+    "name": "image",
+    "kind": "element",
+    "title": "image",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/image/mod.rs:54",
+    "scope": null
+  },
+  {
+    "name": "line",
+    "kind": "element",
+    "title": "Curve Line",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:197",
+    "scope": null
+  },
+  {
+    "name": "line",
+    "kind": "element",
+    "title": "line",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/line.rs:19",
+    "scope": null
+  },
+  {
+    "name": "move",
+    "kind": "element",
+    "title": "Curve Move",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:174",
+    "scope": null
+  },
+  {
+    "name": "polygon",
+    "kind": "element",
+    "title": "polygon",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/polygon.rs:25",
+    "scope": null
+  },
+  {
+    "name": "polygon.regular",
+    "kind": "function",
+    "title": "Regular Polygon",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/polygon.rs:64",
+    "scope": "polygon"
+  },
+  {
+    "name": "quad",
+    "kind": "element",
+    "title": "Curve Quadratic Segment",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:237",
+    "scope": null
+  },
+  {
+    "name": "rect",
+    "kind": "element",
+    "title": "Rectangle",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/shape.rs:19",
+    "scope": null
+  },
+  {
+    "name": "square",
+    "kind": "element",
+    "title": "square",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/shape.rs:143",
+    "scope": null
+  },
+  {
+    "name": "stroke",
+    "kind": "type",
+    "title": "stroke",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/stroke.rs:53",
+    "scope": null
+  },
+  {
+    "name": "stroke.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/stroke.rs:99",
+    "scope": "stroke"
+  },
+  {
+    "name": "tiling",
+    "kind": "type",
+    "title": "tiling",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/tiling.rs:103",
+    "scope": null
+  },
+  {
+    "name": "tiling.construct",
+    "kind": "function",
+    "title": "construct",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/tiling.rs:139",
+    "scope": "tiling"
+  }
+]

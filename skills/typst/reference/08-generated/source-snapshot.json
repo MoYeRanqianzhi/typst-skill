@@ -1,0 +1,224 @@
+{
+  "generated_at": "2026-03-08T20:48:09.259994+00:00",
+  "typst": {
+    "version": "0.14.2",
+    "changelog_date": null,
+    "branch": "main",
+    "commit": "364ece3"
+  },
+  "blue_book": {
+    "branch": "main",
+    "commit": "f8d51ad",
+    "has_readme": true,
+    "has_cargo": true,
+    "topic_roots": [
+      "src/tutorial",
+      "src/topics",
+      "src/template",
+      "src/science",
+      "src/graph",
+      "src/misc"
+    ],
+    "typst_dependency": "0.13.1"
+  },
+  "reference_pages": {
+    "language": [
+      {
+        "slug": "context",
+        "title": "Context",
+        "path": "docs/reference/language/context.md"
+      },
+      {
+        "slug": "scripting",
+        "title": "Scripting",
+        "path": "docs/reference/language/scripting.md"
+      },
+      {
+        "slug": "styling",
+        "title": "Styling",
+        "path": "docs/reference/language/styling.md"
+      },
+      {
+        "slug": "syntax",
+        "title": "Syntax",
+        "path": "docs/reference/language/syntax.md"
+      }
+    ],
+    "library": [
+      {
+        "slug": "data-loading",
+        "title": "Encoding",
+        "path": "docs/reference/library/data-loading.md"
+      },
+      {
+        "slug": "foundations",
+        "title": "foundations",
+        "path": "docs/reference/library/foundations.md"
+      },
+      {
+        "slug": "introspection",
+        "title": "introspection",
+        "path": "docs/reference/library/introspection.md"
+      },
+      {
+        "slug": "layout",
+        "title": "layout",
+        "path": "docs/reference/library/layout.md"
+      },
+      {
+        "slug": "math",
+        "title": "Variables",
+        "path": "docs/reference/library/math.md"
+      },
+      {
+        "slug": "model",
+        "title": "model",
+        "path": "docs/reference/library/model.md"
+      },
+      {
+        "slug": "symbols",
+        "title": "symbols",
+        "path": "docs/reference/library/symbols.md"
+      },
+      {
+        "slug": "text",
+        "title": "text",
+        "path": "docs/reference/library/text.md"
+      },
+      {
+        "slug": "visualize",
+        "title": "Accessibility",
+        "path": "docs/reference/library/visualize.md"
+      }
+    ],
+    "export": [
+      {
+        "slug": "html",
+        "title": "Exporting as HTML",
+        "path": "docs/reference/export/html.md"
+      },
+      {
+        "slug": "pdf",
+        "title": "Exporting as PDF",
+        "path": "docs/reference/export/pdf.md"
+      },
+      {
+        "slug": "png",
+        "title": "Exporting as PNG",
+        "path": "docs/reference/export/png.md"
+      },
+      {
+        "slug": "svg",
+        "title": "Exporting as SVG",
+        "path": "docs/reference/export/svg.md"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "variants",
+      "title": "Variants",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "styles",
+      "title": "Styles",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "sizes",
+      "title": "Sizes",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "underover",
+      "title": "Under/Over",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "roots",
+      "title": "Roots",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "attach",
+      "title": "Attach",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "lr",
+      "title": "Left/Right",
+      "category": "math",
+      "path": [
+        "math"
+      ]
+    },
+    {
+      "name": "calc",
+      "title": "Calculation",
+      "category": "foundations",
+      "path": [
+        "calc"
+      ]
+    },
+    {
+      "name": "std",
+      "title": "Standard Library",
+      "category": "foundations",
+      "path": [
+        "std"
+      ]
+    },
+    {
+      "name": "sys",
+      "title": "System",
+      "category": "foundations",
+      "path": [
+        "sys"
+      ]
+    },
+    {
+      "name": "sym",
+      "title": "General",
+      "category": "symbols",
+      "path": [
+        "sym"
+      ]
+    },
+    {
+      "name": "emoji",
+      "title": "Emoji",
+      "category": "symbols",
+      "path": [
+        "emoji"
+      ]
+    },
+    {
+      "name": "typed",
+      "title": "Typed HTML",
+      "category": "html",
+      "path": [
+        "html"
+      ]
+    }
+  ],
+  "entry_count": 0
+}

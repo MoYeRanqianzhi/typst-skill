@@ -1,39 +1,33 @@
-> Support note: This file is a generated-index support document. Prefer the numbered reference tree for normal task routing.
+﻿> Support note: This file supports the generated-index pipeline. Prefer the numbered reference tree for normal task routing.
 
-﻿# Source Map
+# Source Map
 
-## Official Typst Source
+## Purpose
 
-- Compiler/library source: `typst/crates/typst-library/src/`
-- HTML export source: `typst/crates/typst-html/src/`
-- Official docs source root: `typst/docs/`
-- Architecture notes: `typst/docs/dev/architecture.md`
-- Contribution/development norms: `typst/CONTRIBUTING.md`
+- Provide a compact map of upstream locations used by the generated indexes.
+- Help maintainers jump to the right source tree when a query result needs manual verification.
 
-## Official Docs Sections
+## Main Upstream Roots
 
-- Language reference: `typst/docs/reference/language/`
-- Library category docs: `typst/docs/reference/library/`
-- Export docs: `typst/docs/reference/export/`
-- Guides: `typst/docs/guides/`
-- Tutorial: `typst/docs/tutorial/`
-- Changelog: `typst/docs/changelog/`
+- Official library source: `typst/crates/typst-library/src/`
+- Official HTML source: `typst/crates/typst-html/src/`
+- Official docs source: `typst/docs/`
+- Blue-book source: `The Raindrop-Blue Book/src/`
 
-## Blue Book
+## Generated Outputs
 
-- Main source root: `The Raindrop-Blue Book/src/`
-- Tutorial-heavy content: `The Raindrop-Blue Book/src/tutorial/`
-- Templates: `The Raindrop-Blue Book/src/template/`
-- Topics/misc/science examples: `The Raindrop-Blue Book/src/topics/`, `The Raindrop-Blue Book/src/misc/`, `The Raindrop-Blue Book/src/science/`
-- Book entrypoints: `The Raindrop-Blue Book/src/book.typ`, `The Raindrop-Blue Book/src/ebook.typ`
+- Comprehensive index: `skills/typst/reference/generated/typst-reference.json`
+- Comprehensive summary: `skills/typst/reference/generated/summary.md`
+- Lightweight official inventory: `skills/typst/reference/08-generated/typst-api-index.json`
+- Lightweight official summary: `skills/typst/reference/08-generated/typst-api-index.md`
 
-## Generated References
+## Cached Inputs Used By The Comprehensive Builder
 
-- Machine-readable index: `skills/typst/reference/generated/typst-reference.json`
-- Summary: `skills/typst/reference/generated/summary.md`
+- Typed HTML metadata from local `typst-assets` Cargo checkout
+- Symbol and emoji metadata from local `codex` Cargo registry sources
 
-## Cached Upstream Data Used By The Builder
+## Open This File When
 
-- Typed HTML metadata: `C:/Users/MoYeR/.cargo/git/checkouts/typst-assets-*/57a38ca/files/html/data.rs`
-- Typed HTML type definitions: `C:/Users/MoYeR/.cargo/git/checkouts/typst-assets-*/57a38ca/src/html.rs`
-- Symbol and emoji modules: `C:/Users/MoYeR/.cargo/registry/src/index.crates.io-*/codex-0.2.0/src/modules/`
+- You are maintaining the generated-index scripts.
+- You need to verify where a generated field ultimately comes from.
+- You need a quick upstream path map without reopening the numbered docs tree.

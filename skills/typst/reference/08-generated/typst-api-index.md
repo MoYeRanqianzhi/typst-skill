@@ -1,6 +1,6 @@
 # Typst API Summary
 
-- Generated at: `2026-03-08T20:50:51.483341+00:00`
+- Generated at: `2026-03-09T05:12:16.721816+00:00`
 - Typst version: `0.14.2`
 - Typst commit: `364ece3`
 - Blue-book Typst dependency: `0.13.1`

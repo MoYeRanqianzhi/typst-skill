@@ -8,3 +8,4 @@
 - 接入已有的 `build_reference.py` / `query_reference.py` 综合索引链路。
 - 新增 `refresh_typst_knowledge.py` 与 `query_api_index.py`，补充轻量官方 inventory。
 - 生成 `reference/generated/` 与 `reference/08-generated/` 下的索引产物。
+- Finalized support-doc roles, added accessibility and HTML recipe, and normalized several reference pages to remove encoding-risk content.

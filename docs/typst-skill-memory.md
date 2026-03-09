@@ -1,61 +1,43 @@
-﻿# Typst Skill Shared Memory
+# Typst Skill Shared Memory
 
-## 项目简介
+## Role
 
-- 项目名称：Typst Skill
-- Skill 名称：`typst`
-- 目标：基于本地 `typst` 源码仓库与 `The Raindrop-Blue Book` 中文蓝皮书，构建一个可追溯、可验证、可解释的 Typst Agent Skill。
+- This file is the append-only shared implementation log for the `typst` skill.
+- Keep current-state guidance in `docs/project-memory.md`.
+- Put detailed historical facts, decisions, and implementation notes here.
 
-## 目录约定
+## Confirmed Upstream Facts
 
-- Skill 主目录：`skills/typst/`
-- 持久化文档：`docs/`
-- 上游官方源码：`typst/`
-- 上游中文蓝皮书：`The Raindrop-Blue Book/`
+- Typst version: `0.14.2`
+- Typst commit used during implementation: `364ece3cb37975f509a779fc3ddc929285971d73`
+- Typst remote: `https://github.com/typst/typst`
+- Blue-book commit used during implementation: `f8d51ad0cb99a886dbe347f0d71c4f3a49c1f59f`
+- Blue-book remote: `https://github.com/typst-doc-cn/tutorial`
 
-## 当前实现策略
+## Key Technical Decisions
 
-1. 使用 `npx skills init typst` 初始化 `skills/typst/SKILL.md`。
-2. 使用本地 Typst 官方源码与官方 docs 源文件作为第一事实来源。
-3. 使用中文蓝皮书作为中文示例、教程、模板、包与插件实践来源。
-4. 使用 `skills/typst/scripts/build_reference.py` 构建机器可检索索引。
-5. 使用 `skills/typst/scripts/query_reference.py` 统一查询 API、官方文档、蓝皮书与原始源码 grep 结果。
+- Do not rely on conversational context as the only memory.
+- Prefer local upstream source and docs over recollection.
+- Use `build_reference.py` and `query_reference.py` as the default cross-source search layer.
+- Keep `refresh_typst_knowledge.py` and `query_api_index.py` as a lighter official inventory path.
+- Keep blue-book content as a secondary source for explanation, templates, and Chinese recipes.
 
-## 已确认的上游信息
+## Environment Notes
 
-- Typst 版本：`0.14.2`
-- Typst 当前提交：`364ece3cb37975f509a779fc3ddc929285971d73`
-- Typst 远程：`https://github.com/typst/typst`
-- 蓝皮书当前提交：`f8d51ad0cb99a886dbe347f0d71c4f3a49c1f59f`
-- 蓝皮书远程：`https://github.com/typst-doc-cn/tutorial`
+- `cargo run -p typst-docs` debug builds were blocked on this machine by Windows linker or PDB issues.
+- `cargo run --release -p typst-docs` was previously blocked by disk pressure.
+- Because of this, the current skill relies on a source-parsing index pipeline instead of a direct `typst-docs` JSON artifact.
 
-## 关键技术决策
+## Historical Milestones
 
-- 决策：不依赖上下文记忆，所有重要事实写入本文件与 `skills/typst/reference/`。
-- 决策：优先用本地源码和文档求证，不凭印象回答 Typst 语义。
-- 决策：官方 `typst-docs` 可执行文档生成器在本机尝试构建时失败，因此当前采用“源码解析 + 本地缓存数据源”的轻量索引方案。
+- 2026-03-09: initialized the root repo and created `skills/typst/` and `docs/`.
+- 2026-03-09: confirmed local Typst baseline as `0.14.2`.
+- 2026-03-09: added SOP, layered references, index builders, and query scripts.
+- 2026-03-09: added dual-index routing and version-risk notes.
+- 2026-03-09: aligned `data-loading` naming with official docs and added a `symbols` reference page.
 
-## 已知问题
+## Future Follow-Up
 
-- `cargo run -p typst-docs` 调试构建在 Windows 上触发 PDB/链接错误。
-- `cargo run --release -p typst-docs` 受本机磁盘空间不足阻塞。
-- 因此当前 `reference/generated/typst-reference.json` 不是 `typst-docs` 产出的官方 JSON，而是从源码、官方 docs 源、Cargo 缓存中的 `typst-assets` 与 `codex` 数据组合生成的索引。
-
-## 使用说明
-
-- 重建索引：`python skills/typst/scripts/build_reference.py`
-- 查询 API：`python skills/typst/scripts/query_reference.py --name page`
-- 模糊查询：`python skills/typst/scripts/query_reference.py --query wasm plugin`
-
-## 后续待办
-
-- 若环境允许，补充一次基于 `typst-docs` 二进制的官方 JSON 对照校验。
-- 审视 `query_reference.py` 的命中质量，按真实使用反馈迭代权重与输出格式。
-- 视需要补充更细粒度的 HTML typed attribute 查询展示。
-
-## 更新日志
-
-- 2026-03-09：初始化根仓库、创建 `skills/typst/` 与 `docs/`。
-- 2026-03-09：确认本地 Typst 版本为 `0.14.2`，并核验 GitHub 最新 release 仍为 `0.14.2`。
-- 2026-03-09：确认官方文档模型入口在 `typst/docs/src/model.rs`，但受本机构建限制改走源码索引方案。
-- 2026-03-09：新增 `SKILL.md`、参考文档、索引构建脚本和查询脚本。
+- If the environment allows, compare the custom index output against a true `typst-docs` artifact.
+- Refine `query_reference.py` ranking based on real usage feedback.
+- Expand typed HTML and accessibility recipes if future usage shows they need more depth.

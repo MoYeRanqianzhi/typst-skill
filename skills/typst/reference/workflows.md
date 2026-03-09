@@ -1,31 +1,27 @@
-> Support note: This file is a generated-index support document. Prefer the numbered reference tree for normal task routing.
+﻿> Support note: This file supports the generated-index pipeline. Prefer the numbered reference tree for normal task routing.
 
-﻿# Typst Workflows
+# Workflows
 
-## API Lookup
+## Purpose
 
-- Exact API: `python skills/typst/scripts/query_reference.py --name dictionary.at`
-- Category/topic: `python skills/typst/scripts/query_reference.py --query layout grid`
-- HTML typed element: `python skills/typst/scripts/query_reference.py --query html video`
-- Chinese example: `python skills/typst/scripts/query_reference.py --query wasm plugin`
+- Document the maintenance workflow for the generated indexes.
+- Keep query and rebuild commands in one small support note.
 
-## Answering Questions
+## Default Query Flow
 
-1. Anchor the Typst version first.
-2. Search the generated index.
-3. Open the returned local source files for verification.
-4. Add Blue Book examples when the user wants a tutorial or Chinese explanation.
-5. Check the latest changelog if behavior may have changed across versions.
+1. Use `python skills/typst/scripts/query_reference.py --query <keyword>` for broad cross-source lookup.
+2. Use `python skills/typst/scripts/query_api_index.py --name <keyword>` for quick official-only filtering.
+3. Open the returned upstream source path to verify final behavior.
 
-## Migration Guidance
+## Rebuild Flow
 
-- Search the generated index for deprecation messages.
-- Read `typst/docs/changelog/0.14.2.md`, `typst/docs/changelog/0.14.1.md`, and `typst/docs/changelog/0.14.0.md`.
-- Recommend feature detection via `"name" in std` or `sys.version` when back-compat matters.
+1. Update local upstream snapshots under `typst/` and `The Raindrop-Blue Book/`.
+2. Run `python skills/typst/scripts/build_reference.py`.
+3. Run `python skills/typst/scripts/refresh_typst_knowledge.py`.
+4. Re-check `reference/07-versioning/` if the Typst version changed.
 
-## Packages, Templates, And Plugins
+## Open This File When
 
-- Packages and imports: Blue Book tutorial files around modulization and packages.
-- Templates: Blue Book `src/template/` and official tutorial/template docs.
-- Plugins/WASM: Blue Book tutorial/reference files mentioning WASM plugin usage.
-- HTML export: official `typst/docs/reference/export/html.md`, `typst/crates/typst-html/src/`, and cached typed HTML metadata.
+- You are rebuilding indexes after upstream updates.
+- You need the canonical query commands.
+- You are debugging differences between the broad index and the lightweight official inventory.

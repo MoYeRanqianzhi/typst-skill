@@ -27,14 +27,15 @@
 - Language layer: `02-language/`
 - Official library categories: `03-library/`
 - Module/group pages: `04-modules/std-calc-sys-sym-emoji.md`
-- Chinese recipes: `05-recipes/`
+- Recipes: `05-recipes/`
+- Accessibility and HTML-specific recipe: `05-recipes/accessibility-and-html.md`
 - CLI and source maps: `06-dev/`
 - Versioning and blue-book drift: `07-versioning/`
 - Support docs: `overview.md`, `source-map.md`, `workflows.md`
 
 ## Support Docs
 
-- `overview.md`, `source-map.md`, and `workflows.md` are support/compatibility notes for the comprehensive index pipeline.
+- `overview.md`, `source-map.md`, and `workflows.md` are support or compatibility notes for the generated-index pipeline.
 - Prefer the numbered tree for normal task routing; open the support docs when you need generated-index context or a quick source overview.
 
 ## Refresh

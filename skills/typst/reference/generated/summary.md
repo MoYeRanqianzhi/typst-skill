@@ -1,6 +1,6 @@
 # Typst Reference Summary
 
-- Generated at: `2026-03-08T20:50:01.889955+00:00`
+- Generated at: `2026-03-09T05:12:16.108835+00:00`
 - Typst version: `0.14.2`
 - Typst commit: `364ece3cb37975f509a779fc3ddc929285971d73`
 - Blue Book commit: `f8d51ad0cb99a886dbe347f0d71c4f3a49c1f59f`

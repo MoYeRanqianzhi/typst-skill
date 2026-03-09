@@ -1,46 +1,50 @@
-﻿# Project Memory
+# Project Memory
 
-## 项目简介
+## Role
 
-- 项目名称：`Typst Skill`
-- Skill 名称：`typst`
-- 目标：提供面向 `Typst 0.14.2` 的完整 Agent Skill，覆盖官方开发规范、语言参考、库 API 索引、调试流程、蓝皮书中文实践与版本风险提示。
+- This is the canonical current-state memory for the `typst` skill.
+- Keep this file concise, current, and authoritative.
+- Put detailed historical notes into `docs/typst-skill-memory.md`.
 
-## 当前基线
+## Project Summary
 
-- 官方源码快照：`./typst`
-- 中文蓝皮书快照：`./The Raindrop-Blue Book`
-- 官方稳定版本：`Typst 0.14.2`
-- 蓝皮书依赖版本：存在 `0.11/0.12/0.13.1` 混合痕迹，必须通过版本文档兜底。
+- Project name: `Typst Skill`
+- Skill name: `typst`
+- Goal: provide a complete Typst Agent Skill for `Typst 0.14.2`, covering official workflows, language guidance, library reference, API lookup, debugging guidance, blue-book recipes, and version-risk notes.
 
-## 目录约定
+## Current Baseline
 
-- `skills/typst/`：Skill 主体。
-- `skills/typst/SKILL.md`：SOP 与调度逻辑。
-- `skills/typst/scripts/build_reference.py`：全量跨源索引构建器。
-- `skills/typst/scripts/query_reference.py`：全量跨源查询入口。
-- `skills/typst/scripts/refresh_typst_knowledge.py`：轻量官方索引刷新器。
-- `skills/typst/scripts/query_api_index.py`：轻量官方索引查询器。
-- `skills/typst/reference/`：按任务和主题拆分的参考资料。
-- `skills/typst/reference/generated/`：综合索引产物。
-- `skills/typst/reference/08-generated/`：轻量官方 API inventory。
-- `docs/`：项目长期记忆与维护记录。
+- Official source snapshot: `./typst`
+- Chinese blue-book snapshot: `./The Raindrop-Blue Book`
+- Official stable version: `Typst 0.14.2`
+- Blue-book version traces: mixed `0.11`, `0.12.0`, and `0.13.1`, so version documents are mandatory.
 
-## 维护与刷新流程
+## Important Paths
 
-1. 更新本地 `typst` 或蓝皮书快照。
-2. 运行 `python skills/typst/scripts/build_reference.py`。
-3. 运行 `python skills/typst/scripts/refresh_typst_knowledge.py`。
-4. 检查 `skills/typst/reference/generated/` 与 `skills/typst/reference/08-generated/`。
-5. 如 Typst 版本变化，更新 `skills/typst/reference/07-versioning/`。
-6. 运行 `python C:/Users/MoYeR/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/typst`。
+- `skills/typst/SKILL.md` - SOP and routing logic
+- `skills/typst/scripts/build_reference.py` - comprehensive cross-source index builder
+- `skills/typst/scripts/query_reference.py` - default cross-source query entry point
+- `skills/typst/scripts/refresh_typst_knowledge.py` - lightweight official inventory builder
+- `skills/typst/scripts/query_api_index.py` - lightweight official inventory query entry point
+- `skills/typst/reference/generated/` - comprehensive generated artifacts
+- `skills/typst/reference/08-generated/` - lightweight official inventory artifacts
 
-## 设计决策
+## Maintenance Workflow
 
-- 以“`SKILL.md` 负责调度，`reference/` 负责知识承载”为核心。
-- 以官方 Typst docs/source 为主，蓝皮书用于中文经验、案例和模板模式补强。
-- 同时保留“综合索引”和“轻量官方 inventory”，兼顾覆盖率与查询速度。
+1. Update local `typst` or blue-book snapshots.
+2. Run `python skills/typst/scripts/build_reference.py`.
+3. Run `python skills/typst/scripts/refresh_typst_knowledge.py`.
+4. Check `skills/typst/reference/generated/` and `skills/typst/reference/08-generated/`.
+5. If the Typst version changes, update `skills/typst/reference/07-versioning/`.
+6. Run `python C:/Users/MoYeR/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/typst`.
+
+## Design Decisions
+
+- `SKILL.md` handles routing; `reference/` handles detailed knowledge.
+- Official Typst docs/source take precedence over the blue book.
+- Keep two index layers: a broad default index and a fast official-only inventory.
+- Prefer concise references and progressive disclosure over large monolithic docs.
 
 ## Encoding
 
-- All Skill and docs files should be stored as UTF-8.
+- Store all Skill and docs files as UTF-8 without BOM when possible.

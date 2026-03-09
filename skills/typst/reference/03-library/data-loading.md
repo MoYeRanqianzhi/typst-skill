@@ -1,24 +1,26 @@
-﻿# Data Loading
+# Data Loading
 
-## 用途
+## Use
 
-- 处理外部数据读取、结构化数据解析与输入桥接。
+- Handle external file reads, structured data parsing, encoding helpers, and CLI input bridging.
 
-## 权威来源
+## Authoritative Sources
 
 - `typst/docs/reference/library/data-loading.md`
 - `typst/crates/typst-library/src/loading/**`
 - `typst/crates/typst-cli/src/args.rs`
 
-## 重点对象
+## Coverage Map
 
-- `read`
-- `json`、`csv`、`yaml`、`xml`、`toml`、`cbor`
-- `sys.inputs`
+- File reads: `read`
+- Structured formats: `json`, `csv`, `yaml`, `xml`, `toml`, `cbor`
+- Encoding helpers: `json.encode`, `toml.encode`, `yaml.encode`, `cbor.encode`
+- CLI bridge: `sys.inputs`
 
-## 使用建议
+## Guidance
 
-- 小型配置优先用 `sys.inputs`。
-- 可复用或结构化数据优先用 JSON / YAML / CSV / TOML。
-- 二进制或紧凑交换格式优先考虑 `bytes` 与 `cbor`。
-- 需要稳定调试时，把数据文件与 Typst 文档一起放在明确 root 下。
+- Small configuration knobs fit well in `sys.inputs` because they are easy to override from the CLI.
+- Reusable structured data belongs in external JSON, YAML, CSV, XML, or TOML files under a stable root.
+- `cbor.encode` and related helpers are mainly useful when bridging structured data to plugins.
+- Round trips across Typst values and external encodings can be lossy; confirm format-specific behavior before assuming full fidelity.
+- When a build becomes non-reproducible, verify root, relative paths, and input wiring before changing document code.

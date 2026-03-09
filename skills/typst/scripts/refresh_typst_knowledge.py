@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Refresh bundled Typst reference artifacts from local source snapshots."""
 
 from __future__ import annotations
@@ -14,7 +14,6 @@ from typing import Iterable
 
 import yaml
 
-
 CATEGORY_MAP = {
     "foundations": "foundations",
     "model": "model",
@@ -23,7 +22,7 @@ CATEGORY_MAP = {
     "layout": "layout",
     "visualize": "visualize",
     "introspection": "introspection",
-    "loading": "loading",
+    "loading": "data-loading",
     "pdf": "export",
     "html": "export",
 }
@@ -36,6 +35,7 @@ PUB_STRUCT_RE = re.compile(r"pub\s+struct\s+([A-Za-z_][A-Za-z0-9_]*)")
 PUB_ENUM_RE = re.compile(r"pub\s+enum\s+([A-Za-z_][A-Za-z0-9_]*)")
 PUB_CONST_RE = re.compile(r"pub\s+const\s+([A-Za-z_][A-Za-z0-9_]*)")
 IMPL_RE = re.compile(r"impl\s+([A-Za-z_][A-Za-z0-9_]*)\s*\{")
+TYPE_DECL_RE = re.compile(r"\btype\s+([A-Za-z_][A-Za-z0-9_]*)\s*;")
 
 
 @dataclass
@@ -53,6 +53,7 @@ def skill_root() -> Path:
 
 
 def camel_to_kebab(name: str) -> str:
+    name = name.rstrip("_")
     if name.endswith("Elem"):
         name = name[:-4]
     chunks = re.sub(r"([a-z0-9])([A-Z])", r"\1-\2", name).replace("_", "-")
@@ -105,7 +106,7 @@ def changelog_date(typst_root: Path, version: str) -> str | None:
     if not changelog.exists():
         return None
     text = read_text(changelog)
-    match = re.search(r"released on ([A-Za-z]+ \d{1,2}, \d{4})", text)
+    match = re.search(r"Version .*?\(([A-Za-z]+ \d{1,2}, \d{4})\)", text)
     return match.group(1) if match else None
 
 
@@ -121,7 +122,10 @@ def collect_reference_pages(typst_root: Path) -> dict[str, list[dict[str, str]]]
         items = []
         for path in paths:
             body = read_text(path).strip().splitlines()
-            title = next((line[2:].strip() for line in body if line.startswith("# ")), path.stem)
+            if section == "library":
+                title = path.stem.replace("-", " ").title()
+            else:
+                title = next((line[2:].strip() for line in body if line.startswith("# ")), path.stem.replace("-", " ").title())
             items.append(
                 {
                     "slug": path.stem,
@@ -159,9 +163,60 @@ def dedupe(entries: Iterable[dict[str, object]]) -> list[dict[str, object]]:
     return result
 
 
+def collect_rust_metadata(source_root: Path) -> tuple[dict[str, str], set[str]]:
+    rust_to_typst: dict[str, str] = {}
+    scope_types: set[str] = set()
+
+    for path in sorted(source_root.rglob("*.rs")):
+        pending_attrs: list[tuple[str, dict[str, object]]] = []
+        for raw_line in read_text(path).splitlines():
+            line = raw_line.strip()
+
+            if line.startswith("#["):
+                macro_match = MACRO_RE.fullmatch(line)
+                if macro_match:
+                    pending_attrs.append((macro_match.group(1), parse_attr_payload(macro_match.group(2))))
+                else:
+                    pending_attrs.append(("other", {}))
+                continue
+
+            impl_match = IMPL_RE.search(line)
+            if impl_match and any(kind == "scope" for kind, _ in pending_attrs):
+                scope_types.add(impl_match.group(1))
+
+            fn_match = PUB_FN_RE.search(line)
+            struct_match = PUB_STRUCT_RE.search(line)
+            enum_match = PUB_ENUM_RE.search(line)
+
+            if fn_match:
+                rust_name = fn_match.group(1)
+                func_attr = next((attrs for kind, attrs in pending_attrs if kind == "func"), None)
+                if func_attr:
+                    rust_to_typst.setdefault(rust_name, str(func_attr["name"] or camel_to_kebab(rust_name)))
+                    if func_attr["scope"]:
+                        scope_types.add(rust_name)
+
+            elif struct_match or enum_match:
+                rust_name = (struct_match or enum_match).group(1)
+                macro_kind, attrs = next(
+                    ((kind, attrs) for kind, attrs in pending_attrs if kind in {"elem", "ty"}),
+                    (None, None),
+                )
+                if macro_kind and attrs:
+                    rust_to_typst.setdefault(rust_name, str(attrs["name"] or camel_to_kebab(rust_name)))
+                    if attrs["scope"]:
+                        scope_types.add(rust_name)
+
+            if line and not line.startswith("///"):
+                pending_attrs.clear()
+
+    return rust_to_typst, scope_types
+
+
 def scan_library(typst_root: Path) -> list[dict[str, object]]:
     source_root = typst_root / "crates" / "typst-library" / "src"
-    rust_to_typst: dict[str, str] = {}
+    rust_to_typst, scope_types = collect_rust_metadata(source_root)
+    scoped_members: dict[str, str] = {}
     entries: list[dict[str, object]] = []
 
     for path in sorted(source_root.rglob("*.rs")):
@@ -189,7 +244,7 @@ def scan_library(typst_root: Path) -> list[dict[str, object]]:
 
             current_scope = scopes[-1].canonical if scopes else None
             impl_match = IMPL_RE.search(line)
-            if impl_match and any(kind == "scope" for kind, _ in pending_attrs):
+            if impl_match and (any(kind == "scope" for kind, _ in pending_attrs) or impl_match.group(1) in scope_types):
                 rust_name = impl_match.group(1)
                 scope_name = rust_to_typst.get(rust_name, camel_to_kebab(rust_name))
                 target_depth = depth + raw_line.count("{") - raw_line.count("}")
@@ -202,12 +257,19 @@ def scan_library(typst_root: Path) -> list[dict[str, object]]:
             struct_match = PUB_STRUCT_RE.search(line)
             enum_match = PUB_ENUM_RE.search(line)
             const_match = PUB_CONST_RE.search(line) if current_scope else None
+            scoped_type_match = TYPE_DECL_RE.search(line)
+
+            if scoped_type_match and current_scope and any(kind in {"elem", "ty"} for kind, _ in pending_attrs):
+                scoped_members[scoped_type_match.group(1)] = current_scope
+                pending_attrs.clear()
+                depth += raw_line.count("{") - raw_line.count("}")
+                continue
 
             if fn_match:
                 rust_name = fn_match.group(1)
                 func_attr = next((attrs for kind, attrs in pending_attrs if kind == "func"), None)
                 if func_attr:
-                    typst_name = str(func_attr["name"] or rust_name.replace("_", "-"))
+                    typst_name = str(func_attr["name"] or camel_to_kebab(rust_name))
                     full_name = f"{current_scope}.{typst_name}" if current_scope else typst_name
                     rust_to_typst.setdefault(rust_name, typst_name)
                     entries.append(
@@ -227,10 +289,11 @@ def scan_library(typst_root: Path) -> list[dict[str, object]]:
                     ((kind, attrs) for kind, attrs in pending_attrs if kind in {"elem", "ty"}),
                     (None, None),
                 )
-                if macro_kind and attrs is not None:
+                if attrs:
                     typst_name = str(attrs["name"] or camel_to_kebab(rust_name))
-                    rust_to_typst[rust_name] = typst_name
-                    full_name = f"{current_scope}.{typst_name}" if current_scope else typst_name
+                    rust_to_typst.setdefault(rust_name, typst_name)
+                    member_scope = current_scope or scoped_members.get(rust_name)
+                    full_name = f"{member_scope}.{typst_name}" if member_scope else typst_name
                     entries.append(
                         {
                             "name": full_name,
@@ -238,7 +301,7 @@ def scan_library(typst_root: Path) -> list[dict[str, object]]:
                             "title": attrs["title"] or typst_name,
                             "category": category,
                             "source": f"{rel}:{lineno}",
-                            "scope": current_scope,
+                            "scope": member_scope,
                         }
                     )
 
@@ -261,7 +324,8 @@ def scan_library(typst_root: Path) -> list[dict[str, object]]:
 
             depth += raw_line.count("{") - raw_line.count("}")
 
-    return dedupe(sorted(entries, key=lambda item: (str(item["category"]), str(item["name"]), str(item["source"]))))
+    entries = sorted(entries, key=lambda item: (str(item["category"]), str(item["name"]), str(item["source"])))
+    return dedupe(entries)
 
 
 def blue_book_summary(blue_book_root: Path) -> dict[str, object]:
@@ -303,7 +367,8 @@ def render_markdown(snapshot: dict[str, object], pages: dict[str, list[dict[str,
         f"- Official page sets: `language={len(pages.get('language', []))}`, `library={len(pages.get('library', []))}`, `export={len(pages.get('export', []))}`",
         f"- Official group pages: `{len(groups)}`",
         "",
-        "Use `typst-api-index.json` plus `query_api_index.py` for the exhaustive inventory.",
+        "Use `typst-api-index.json` plus `query_api_index.py` for a fast official inventory of library/category entries.",
+        "Use `query_reference.py` for broader symbol, HTML-attribute, and blue-book-backed lookup.",
         "",
         "## Category Counts",
         "",
@@ -349,6 +414,10 @@ def main() -> int:
         "reference_pages": pages,
         "groups": groups,
         "entry_count": len(entries),
+        "coverage_notes": [
+            "This inventory focuses on official library/category entries extracted from typst-library source.",
+            "Use the broader query_reference pipeline for symbols, HTML attributes, and blue-book-backed lookups.",
+        ],
     }
 
     (generated_root / "source-snapshot.json").write_text(

@@ -1,13 +1,14 @@
 # Typst Reference Summary
 
-- Generated at: `2026-03-09T05:12:16.108835+00:00`
+- Generated at: `2026-03-09T12:08:05.690970+00:00`
 - Typst version: `0.14.2`
-- Typst commit: `364ece3cb37975f509a779fc3ddc929285971d73`
-- Blue Book commit: `f8d51ad0cb99a886dbe347f0d71c4f3a49c1f59f`
+- Typst commit: `369ddd318636c152b5957c5a296297e8b42bb9a3`
+- Blue Book commit: `369ddd318636c152b5957c5a296297e8b42bb9a3`
 - Rust API items: `464`
 - HTML typed elements: `112`
 - HTML attributes: `224`
-- Symbol blocks: `1078`
+- Symbol blocks: `2671`
+- Bindings indexed: `277`
 - Official docs indexed: `50`
 - Blue Book files indexed: `89`
 
@@ -15,11 +16,12 @@
 
 - `data-loading`: `17`
 - `foundations`: `204`
-- `html`: `3`
+- `html`: `339`
 - `introspection`: `26`
 - `layout`: `43`
 - `math`: `49`
 - `model`: `44`
 - `pdf`: `6`
+- `symbols`: `2671`
 - `text`: `16`
 - `visualize`: `56`

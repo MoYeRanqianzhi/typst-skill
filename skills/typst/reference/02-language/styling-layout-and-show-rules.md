@@ -2,24 +2,37 @@
 
 ## Use
 
-- Handle `set` and `show` rules, selectors, page setup, layout elements, and style propagation.
+- Handle `set` and `show` rules, selectors, style propagation, page setup, and layout-aware styling.
 
 ## Authoritative Sources
 
 - `typst/docs/reference/language/styling.md`
 - `typst/docs/guides/page-setup.md`
+- `typst/docs/reference/library/layout.md`
 - `The Raindrop-Blue Book/src/tutorial/scripting-style.typ`
 - `The Raindrop-Blue Book/src/tutorial/scripting-layout.typ`
 
 ## Core Concepts
 
-- `set` configures defaults; `show` overrides presentation logic.
-- Page-level configuration is safest near the start of a document or in a template.
-- For layout issues, inspect `page`, `block`, `box`, `align`, `place`, `stack`, and `grid` before adding hacks.
-- Keep `show` selectors as narrow as possible to reduce side effects.
+- `set` configures defaults; `show` transforms or replaces presentation behavior.
+- Keep selectors narrow to avoid surprising global side effects.
+- Put page configuration near the start of the document or inside a template.
+- Prefer solving structural problems structurally before reaching for absolute placement.
 
-## Common Pitfalls
+## High-Value Topics
 
-- Changing `set page(...)` mid-document and triggering unexpected page breaks.
-- Using absolute placement to hide a structural problem.
-- Writing highly global `show` rules with position-sensitive logic.
+- `set page(...)` and page-level margins, numbering, and headers
+- `show heading`, `show link`, and other semantic element selectors
+- `block`, `box`, `align`, `place`, `stack`, `grid`, `columns`
+- backend-aware styling with `target()`
+
+## Common Mistakes
+
+- changing `set page(...)` mid-document without considering page breaks
+- using global `show` rules where a local selector or wrapper would do
+- relying on paged layout tricks for HTML output
+
+## Also See
+
+- `../03-library/layout.md`
+- `../05-recipes/plugins-html-pdf-svg-png.md`

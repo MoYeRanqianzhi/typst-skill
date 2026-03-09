@@ -1,20 +1,30 @@
-﻿# Known Issues
+# Known Issues
 
-## 上游资料不一致
+## Upstream Drift
 
-- 中文蓝皮书存在 `0.11`、`0.12.0`、`0.13.1` 相关内容残留，不能直接视为当前官方基线。
-- 蓝皮书在 CLI、包分发、Universe 生态方面不如官方文档完整。
+- The Chinese blue book still contains traces of older Typst baselines such as `0.11`, `0.12.x`, and `0.13.1`.
+- The blue book is weaker than the official docs on CLI behavior, package ecosystem details, and `0.14.x` export and accessibility changes.
 
-## 索引系统现状
+## Provenance Limits
 
-- 当前 Skill 同时维护 `reference/generated/` 综合索引与 `reference/08-generated/` 轻量官方 inventory。
-- 若两个索引结果与原始源码不一致，必须回查 `typst/` 原始文件并以其为准。
+- In this repo, `typst/` and `The Raindrop-Blue Book/` are vendored local directories without their own checked-in `.git` metadata.
+- Because of that, upstream commit provenance for those snapshots is not machine-verifiable from this workspace alone.
+- Any exact upstream commit claims must be treated as external notes unless backed by a checked-in manifest.
 
-## 自动索引的边界
+## Environment Blockers
 
-- `refresh_typst_knowledge.py` 主要覆盖官方库 API、分组页与版本快照。
-- `build_reference.py` 覆盖面更大，但依赖本地缓存与源码解析逻辑，仍不应替代原始上游源码。
+- In the current Windows environment, direct `cargo run -p typst-docs` has been blocked by linker / PDB issues.
+- Earlier `cargo run --release -p typst-docs` attempts were also limited by disk pressure.
+- Because of this, the current skill relies on source parsing plus generated indexes instead of a direct `typst-docs` artifact.
 
-## 仓库管理策略
+## Current Acceptance Blockers
 
-- 根仓库仅跟踪 Skill 与 `docs/`，`typst/` 与 `The Raindrop-Blue Book/` 作为本地上游快照来源，不纳入本项目版本管理。
+- No confirmed active blocker remains in the three previously failing index classes: helper-driven `global.*`, scoped sub-elements, and nested symbol exact lookups were repaired on 2026-03-09 and revalidated locally.
+- Keep watching for future upstream syntax changes in Typst source macros or `sym.txt` layout that could require parser updates.
+
+## Index Strategy Limits
+
+- The skill keeps both `reference/generated/` and `reference/08-generated/`.
+- `query_reference.py` is the default entry point because it also covers symbols, HTML attributes, and blue-book material.
+- `query_api_index.py` is a fast official inventory, not a replacement for the comprehensive index.
+- If generated data and raw source disagree, always verify against `typst/` and trust the raw upstream source.

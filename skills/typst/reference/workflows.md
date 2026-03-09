@@ -1,27 +1,21 @@
-﻿> Support note: This file supports the generated-index pipeline. Prefer the numbered reference tree for normal task routing.
-
 # Workflows
 
-## Purpose
+## Standard Procedure
 
-- Document the maintenance workflow for the generated indexes.
-- Keep query and rebuild commands in one small support note.
+1. Identify whether the task is workflow, language, library, recipe, dev, or versioning.
+2. Open the smallest matching reference page.
+3. For exact API questions, run the query scripts before answering.
+4. If the answer is version-sensitive, verify against the local official changelog or source snapshot.
+5. If blue-book guidance differs from official Typst, state the drift and prefer the official source.
 
-## Default Query Flow
+## Query Shortcuts
 
-1. Use `python skills/typst/scripts/query_reference.py --query <keyword>` for broad cross-source lookup.
-2. Use `python skills/typst/scripts/query_api_index.py --name <keyword>` for quick official-only filtering.
-3. Open the returned upstream source path to verify final behavior.
+- broad cross-source lookup: `python skills/typst/scripts/query_reference.py --query <keyword>`
+- fast official inventory lookup: `python skills/typst/scripts/query_api_index.py --name <keyword>`
 
-## Rebuild Flow
+## When to Escalate to Raw Source
 
-1. Update local upstream snapshots under `typst/` and `The Raindrop-Blue Book/`.
-2. Run `python skills/typst/scripts/build_reference.py`.
-3. Run `python skills/typst/scripts/refresh_typst_knowledge.py`.
-4. Re-check `reference/07-versioning/` if the Typst version changed.
-
-## Open This File When
-
-- You are rebuilding indexes after upstream updates.
-- You need the canonical query commands.
-- You are debugging differences between the broad index and the lightweight official inventory.
+- the query indexes disagree
+- a behavior is target-specific or version-sensitive
+- a recipe appears older than `0.14.2`
+- the task needs exact CLI or backend semantics

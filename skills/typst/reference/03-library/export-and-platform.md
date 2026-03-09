@@ -2,7 +2,7 @@
 
 ## Use
 
-- Summarize PDF, HTML, SVG, and PNG backend behavior, constraints, and decision points.
+- Summarize PDF, HTML, SVG, and PNG backend behavior, output constraints, and platform-sensitive decisions.
 
 ## Authoritative Sources
 
@@ -12,21 +12,34 @@
 - `typst/docs/reference/export/png.md`
 - `typst/docs/guides/accessibility.md`
 - `typst/docs/changelog/0.14.0.md`
+- `typst/docs/changelog/0.14.1.md`
 - `typst/docs/changelog/0.14.2.md`
 
-## Key Takeaways
+## Backend Baselines
 
-- `0.14.0` significantly expanded PDF export and made tagged PDF part of the baseline.
-- `0.14.0` added broad PDF/A support and `pdf.artifact`.
-- `0.14.0` greatly expanded HTML export and introduced the typed HTML API.
-- `0.14.2` is the recommended 0.14.x baseline for plugin-related work because it fixes the 0.14.0 and 0.14.1 WASM runtime security issue.
+- PDF is the most feature-complete publication backend and, in `0.14.x`, emits tagged PDFs by default.
+- HTML is semantic and backend-specific; it should not be treated as a paged PDF clone.
+- SVG and PNG are page-image exports and have multi-page filename-template requirements.
+- Plugin-sensitive work should prefer `Typst 0.14.2` because `0.14.0` and `0.14.1` carried a WASM runtime vulnerability fixed in `0.14.2`.
 
-## Design Rules
+## PDF Notes
 
-- Accessibility-sensitive PDF work should be checked against the Accessibility Guide and the PDF export reference.
-- HTML should be treated as a semantic backend, not as a guaranteed page-faithful clone of paged PDF output.
-- Backend-specific behavior belongs in backend-aware templates, rules, or recipes rather than scattered ad hoc patches.
+- `0.14.0` added broad PDF/A support.
+- `0.14.0` added `pdf.artifact` and experimental table accessibility extras under `a11y-extras`.
+- PDF/UA and PDF/A solve different problems; choose them intentionally.
 
-## Also See
+## HTML Notes
 
-- Accessibility and HTML recipe: `../05-recipes/accessibility-and-html.md`
+- `0.14.0` greatly expanded built-in element coverage and added the typed HTML API.
+- `0.14.1` changed a `page` set rule in HTML export from a hard error to a warning.
+- Keep HTML-specific structure behind backend-aware templates or `target()` checks.
+
+## Platform and Reproducibility Rules
+
+- Fonts, package paths, and root configuration are part of the platform contract.
+- Backend-specific work should be validated with the exact target backend, not only with one default PDF run.
+- If a document must target multiple backends, reduce page-only assumptions early.
+
+## Related Recipe
+
+- Accessibility and HTML-specific guidance lives in `../05-recipes/accessibility-and-html.md`.

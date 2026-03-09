@@ -1,5 +1,93 @@
 [
   {
+    "name": "cbor",
+    "kind": "function",
+    "title": "CBOR",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/cbor.rs:49",
+    "scope": null
+  },
+  {
+    "name": "cbor.encode",
+    "kind": "function",
+    "title": "Encode CBOR",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/cbor.rs:78",
+    "scope": "cbor"
+  },
+  {
+    "name": "csv",
+    "kind": "function",
+    "title": "CSV",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/csv.rs:27",
+    "scope": null
+  },
+  {
+    "name": "json",
+    "kind": "function",
+    "title": "JSON",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/json.rs:78",
+    "scope": null
+  },
+  {
+    "name": "json.encode",
+    "kind": "function",
+    "title": "Encode JSON",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/json.rs:125",
+    "scope": "json"
+  },
+  {
+    "name": "read",
+    "kind": "function",
+    "title": "read",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/read.rs:24",
+    "scope": null
+  },
+  {
+    "name": "toml",
+    "kind": "function",
+    "title": "TOML",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/toml.rs:65",
+    "scope": null
+  },
+  {
+    "name": "toml.encode",
+    "kind": "function",
+    "title": "Encode TOML",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/toml.rs:93",
+    "scope": "toml"
+  },
+  {
+    "name": "xml",
+    "kind": "function",
+    "title": "XML",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/xml.rs:58",
+    "scope": null
+  },
+  {
+    "name": "yaml",
+    "kind": "function",
+    "title": "YAML",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/yaml.rs:72",
+    "scope": null
+  },
+  {
+    "name": "yaml.encode",
+    "kind": "function",
+    "title": "Encode YAML",
+    "category": "data-loading",
+    "source": "crates/typst-library/src/loading/yaml.rs:101",
+    "scope": "yaml"
+  },
+  {
     "name": "artifact",
     "kind": "element",
     "title": "artifact",
@@ -736,6 +824,38 @@
     "scope": "decimal"
   },
   {
+    "name": "decimal.max",
+    "kind": "member",
+    "title": "MAX",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/decimal.rs:101",
+    "scope": "decimal"
+  },
+  {
+    "name": "decimal.min",
+    "kind": "member",
+    "title": "MIN",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/decimal.rs:100",
+    "scope": "decimal"
+  },
+  {
+    "name": "decimal.one",
+    "kind": "member",
+    "title": "ONE",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/decimal.rs:99",
+    "scope": "decimal"
+  },
+  {
+    "name": "decimal.zero",
+    "kind": "member",
+    "title": "ZERO",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/decimal.rs:98",
+    "scope": "decimal"
+  },
+  {
     "name": "dictionary",
     "kind": "type",
     "title": "dictionary",
@@ -992,9 +1112,9 @@
     "scope": null
   },
   {
-    "name": "function.where-",
+    "name": "function.where",
     "kind": "function",
-    "title": "where-",
+    "title": "where",
     "category": "foundations",
     "source": "crates/typst-library/src/foundations/func.rs:397",
     "scope": "function"
@@ -1472,9 +1592,9 @@
     "scope": "str"
   },
   {
-    "name": "str.match-",
+    "name": "str.match",
     "kind": "function",
-    "title": "match-",
+    "title": "match",
     "category": "foundations",
     "source": "crates/typst-library/src/foundations/str.rs:448",
     "scope": "str"
@@ -1672,6 +1792,14 @@
     "scope": "version"
   },
   {
+    "name": "version.components",
+    "kind": "member",
+    "title": "COMPONENTS",
+    "category": "foundations",
+    "source": "crates/typst-library/src/foundations/version.rs:31",
+    "scope": "version"
+  },
+  {
     "name": "version.construct",
     "kind": "function",
     "title": "construct",
@@ -1728,9 +1856,9 @@
     "scope": "counter"
   },
   {
-    "name": "counter.final-",
+    "name": "counter.final",
     "kind": "function",
-    "title": "final-",
+    "title": "final",
     "category": "introspection",
     "source": "crates/typst-library/src/introspection/counter.rs:450",
     "scope": "counter"
@@ -1856,9 +1984,9 @@
     "scope": "state"
   },
   {
-    "name": "state.final-",
+    "name": "state.final",
     "kind": "function",
-    "title": "final-",
+    "title": "final",
     "category": "introspection",
     "source": "crates/typst-library/src/introspection/state.rs:286",
     "scope": "state"
@@ -2024,14 +2152,6 @@
     "scope": null
   },
   {
-    "name": "cell",
-    "kind": "element",
-    "title": "Grid Cell",
-    "category": "layout",
-    "source": "crates/typst-library/src/layout/grid/mod.rs:769",
-    "scope": null
-  },
-  {
     "name": "colbreak",
     "kind": "element",
     "title": "Column Break",
@@ -2144,22 +2264,6 @@
     "scope": "direction"
   },
   {
-    "name": "flush",
-    "kind": "element",
-    "title": "flush",
-    "category": "layout",
-    "source": "crates/typst-library/src/layout/place.rs:213",
-    "scope": null
-  },
-  {
-    "name": "footer",
-    "kind": "element",
-    "title": "Grid Footer",
-    "category": "layout",
-    "source": "crates/typst-library/src/layout/grid/mod.rs:605",
-    "scope": null
-  },
-  {
     "name": "fraction",
     "kind": "type",
     "title": "fraction",
@@ -2176,6 +2280,46 @@
     "scope": null
   },
   {
+    "name": "grid.cell",
+    "kind": "element",
+    "title": "Grid Cell",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:769",
+    "scope": "grid"
+  },
+  {
+    "name": "grid.footer",
+    "kind": "element",
+    "title": "Grid Footer",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:605",
+    "scope": "grid"
+  },
+  {
+    "name": "grid.header",
+    "kind": "element",
+    "title": "Grid Header",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:577",
+    "scope": "grid"
+  },
+  {
+    "name": "grid.hline",
+    "kind": "element",
+    "title": "Grid Horizontal Line",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:623",
+    "scope": "grid"
+  },
+  {
+    "name": "grid.vline",
+    "kind": "element",
+    "title": "Grid Vertical Line",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/grid/mod.rs:675",
+    "scope": "grid"
+  },
+  {
     "name": "h",
     "kind": "element",
     "title": "Spacing (H)",
@@ -2184,27 +2328,11 @@
     "scope": null
   },
   {
-    "name": "header",
-    "kind": "element",
-    "title": "Grid Header",
-    "category": "layout",
-    "source": "crates/typst-library/src/layout/grid/mod.rs:577",
-    "scope": null
-  },
-  {
     "name": "hide",
     "kind": "element",
     "title": "hide",
     "category": "layout",
     "source": "crates/typst-library/src/layout/hide.rs:26",
-    "scope": null
-  },
-  {
-    "name": "hline",
-    "kind": "element",
-    "title": "Grid Horizontal Line",
-    "category": "layout",
-    "source": "crates/typst-library/src/layout/grid/mod.rs:623",
     "scope": null
   },
   {
@@ -2328,6 +2456,14 @@
     "scope": null
   },
   {
+    "name": "place.flush",
+    "kind": "element",
+    "title": "flush",
+    "category": "layout",
+    "source": "crates/typst-library/src/layout/place.rs:213",
+    "scope": "place"
+  },
+  {
     "name": "ratio",
     "kind": "type",
     "title": "ratio",
@@ -2390,102 +2526,6 @@
     "category": "layout",
     "source": "crates/typst-library/src/layout/spacing.rs:96",
     "scope": null
-  },
-  {
-    "name": "vline",
-    "kind": "element",
-    "title": "Grid Vertical Line",
-    "category": "layout",
-    "source": "crates/typst-library/src/layout/grid/mod.rs:675",
-    "scope": null
-  },
-  {
-    "name": "cbor",
-    "kind": "function",
-    "title": "CBOR",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/cbor.rs:49",
-    "scope": null
-  },
-  {
-    "name": "cbor.encode",
-    "kind": "function",
-    "title": "Encode CBOR",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/cbor.rs:78",
-    "scope": "cbor"
-  },
-  {
-    "name": "csv",
-    "kind": "function",
-    "title": "CSV",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/csv.rs:27",
-    "scope": null
-  },
-  {
-    "name": "json",
-    "kind": "function",
-    "title": "JSON",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/json.rs:78",
-    "scope": null
-  },
-  {
-    "name": "json.encode",
-    "kind": "function",
-    "title": "Encode JSON",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/json.rs:125",
-    "scope": "json"
-  },
-  {
-    "name": "read",
-    "kind": "function",
-    "title": "read",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/read.rs:24",
-    "scope": null
-  },
-  {
-    "name": "toml",
-    "kind": "function",
-    "title": "TOML",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/toml.rs:65",
-    "scope": null
-  },
-  {
-    "name": "toml.encode",
-    "kind": "function",
-    "title": "Encode TOML",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/toml.rs:93",
-    "scope": "toml"
-  },
-  {
-    "name": "xml",
-    "kind": "function",
-    "title": "XML",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/xml.rs:58",
-    "scope": null
-  },
-  {
-    "name": "yaml",
-    "kind": "function",
-    "title": "YAML",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/yaml.rs:72",
-    "scope": null
-  },
-  {
-    "name": "yaml.encode",
-    "kind": "function",
-    "title": "Encode YAML",
-    "category": "loading",
-    "source": "crates/typst-library/src/loading/yaml.rs:101",
-    "scope": "yaml"
   },
   {
     "name": "abs",
@@ -2888,22 +2928,6 @@
     "scope": null
   },
   {
-    "name": "caption",
-    "kind": "element",
-    "title": "caption",
-    "category": "model",
-    "source": "crates/typst-library/src/model/figure.rs:495",
-    "scope": null
-  },
-  {
-    "name": "cell",
-    "kind": "element",
-    "title": "Table Cell",
-    "category": "model",
-    "source": "crates/typst-library/src/model/table.rs:735",
-    "scope": null
-  },
-  {
     "name": "cite",
     "kind": "element",
     "title": "cite",
@@ -2960,22 +2984,6 @@
     "scope": null
   },
   {
-    "name": "entry",
-    "kind": "element",
-    "title": "Footnote Entry",
-    "category": "model",
-    "source": "crates/typst-library/src/model/footnote.rs:216",
-    "scope": null
-  },
-  {
-    "name": "entry",
-    "kind": "element",
-    "title": "Outline Entry",
-    "category": "model",
-    "source": "crates/typst-library/src/model/outline.rs:474",
-    "scope": null
-  },
-  {
     "name": "entry.body",
     "kind": "function",
     "title": "body",
@@ -3024,6 +3032,14 @@
     "scope": null
   },
   {
+    "name": "enum.item",
+    "kind": "element",
+    "title": "Numbered List Item",
+    "category": "model",
+    "source": "crates/typst-library/src/model/enum.rs:236",
+    "scope": "enum"
+  },
+  {
     "name": "figure",
     "kind": "element",
     "title": "figure",
@@ -3032,12 +3048,12 @@
     "scope": null
   },
   {
-    "name": "footer",
+    "name": "figure.caption",
     "kind": "element",
-    "title": "Table Footer",
+    "title": "caption",
     "category": "model",
-    "source": "crates/typst-library/src/model/table.rs:528",
-    "scope": null
+    "source": "crates/typst-library/src/model/figure.rs:495",
+    "scope": "figure"
   },
   {
     "name": "footnote",
@@ -3056,12 +3072,12 @@
     "scope": null
   },
   {
-    "name": "header",
+    "name": "footnote.entry",
     "kind": "element",
-    "title": "Table Header",
+    "title": "Footnote Entry",
     "category": "model",
-    "source": "crates/typst-library/src/model/table.rs:498",
-    "scope": null
+    "source": "crates/typst-library/src/model/footnote.rs:216",
+    "scope": "footnote"
   },
   {
     "name": "heading",
@@ -3069,46 +3085,6 @@
     "title": "heading",
     "category": "model",
     "source": "crates/typst-library/src/model/heading.rs:78",
-    "scope": null
-  },
-  {
-    "name": "hline",
-    "kind": "element",
-    "title": "Table Horizontal Line",
-    "category": "model",
-    "source": "crates/typst-library/src/model/table.rs:571",
-    "scope": null
-  },
-  {
-    "name": "item",
-    "kind": "element",
-    "title": "Numbered List Item",
-    "category": "model",
-    "source": "crates/typst-library/src/model/enum.rs:236",
-    "scope": null
-  },
-  {
-    "name": "item",
-    "kind": "element",
-    "title": "Bullet List Item",
-    "category": "model",
-    "source": "crates/typst-library/src/model/list.rs:140",
-    "scope": null
-  },
-  {
-    "name": "item",
-    "kind": "element",
-    "title": "Term List Item",
-    "category": "model",
-    "source": "crates/typst-library/src/model/terms.rs:130",
-    "scope": null
-  },
-  {
-    "name": "line",
-    "kind": "element",
-    "title": "Paragraph Line",
-    "category": "model",
-    "source": "crates/typst-library/src/model/par.rs:789",
     "scope": null
   },
   {
@@ -3136,6 +3112,14 @@
     "scope": null
   },
   {
+    "name": "list.item",
+    "kind": "element",
+    "title": "Bullet List Item",
+    "category": "model",
+    "source": "crates/typst-library/src/model/list.rs:140",
+    "scope": "list"
+  },
+  {
     "name": "numbering",
     "kind": "function",
     "title": "numbering",
@@ -3152,6 +3136,14 @@
     "scope": null
   },
   {
+    "name": "outline.entry",
+    "kind": "element",
+    "title": "Outline Entry",
+    "category": "model",
+    "source": "crates/typst-library/src/model/outline.rs:474",
+    "scope": "outline"
+  },
+  {
     "name": "par",
     "kind": "element",
     "title": "Paragraph",
@@ -3166,6 +3158,14 @@
     "category": "model",
     "source": "crates/typst-library/src/model/par.rs:927",
     "scope": null
+  },
+  {
+    "name": "par.line",
+    "kind": "element",
+    "title": "Paragraph Line",
+    "category": "model",
+    "source": "crates/typst-library/src/model/par.rs:789",
+    "scope": "par"
   },
   {
     "name": "parbreak",
@@ -3208,12 +3208,60 @@
     "scope": null
   },
   {
+    "name": "table.cell",
+    "kind": "element",
+    "title": "Table Cell",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:735",
+    "scope": "table"
+  },
+  {
+    "name": "table.footer",
+    "kind": "element",
+    "title": "Table Footer",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:528",
+    "scope": "table"
+  },
+  {
+    "name": "table.header",
+    "kind": "element",
+    "title": "Table Header",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:498",
+    "scope": "table"
+  },
+  {
+    "name": "table.hline",
+    "kind": "element",
+    "title": "Table Horizontal Line",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:571",
+    "scope": "table"
+  },
+  {
+    "name": "table.vline",
+    "kind": "element",
+    "title": "Table Vertical Line",
+    "category": "model",
+    "source": "crates/typst-library/src/model/table.rs:615",
+    "scope": "table"
+  },
+  {
     "name": "terms",
     "kind": "element",
     "title": "Term List",
     "category": "model",
     "source": "crates/typst-library/src/model/terms.rs:26",
     "scope": null
+  },
+  {
+    "name": "terms.item",
+    "kind": "element",
+    "title": "Term List Item",
+    "category": "model",
+    "source": "crates/typst-library/src/model/terms.rs:130",
+    "scope": "terms"
   },
   {
     "name": "title",
@@ -3224,27 +3272,11 @@
     "scope": null
   },
   {
-    "name": "vline",
-    "kind": "element",
-    "title": "Table Vertical Line",
-    "category": "model",
-    "source": "crates/typst-library/src/model/table.rs:615",
-    "scope": null
-  },
-  {
     "name": "highlight",
     "kind": "element",
     "title": "highlight",
     "category": "text",
     "source": "crates/typst-library/src/text/deco.rs:215",
-    "scope": null
-  },
-  {
-    "name": "line",
-    "kind": "element",
-    "title": "Raw Text / Code Line",
-    "category": "text",
-    "source": "crates/typst-library/src/text/raw.rs:677",
     "scope": null
   },
   {
@@ -3278,6 +3310,14 @@
     "category": "text",
     "source": "crates/typst-library/src/text/deco.rs:82",
     "scope": null
+  },
+  {
+    "name": "raw.line",
+    "kind": "element",
+    "title": "Raw Text / Code Line",
+    "category": "text",
+    "source": "crates/typst-library/src/text/raw.rs:677",
+    "scope": "raw"
   },
   {
     "name": "smallcaps",
@@ -3357,14 +3397,6 @@
     "title": "circle",
     "category": "visualize",
     "source": "crates/typst-library/src/visualize/shape.rs:271",
-    "scope": null
-  },
-  {
-    "name": "close",
-    "kind": "element",
-    "title": "Curve Close",
-    "category": "visualize",
-    "source": "crates/typst-library/src/visualize/curve.rs:365",
     "scope": null
   },
   {
@@ -3688,20 +3720,52 @@
     "scope": "color"
   },
   {
-    "name": "cubic",
-    "kind": "element",
-    "title": "Curve Cubic Segment",
-    "category": "visualize",
-    "source": "crates/typst-library/src/visualize/curve.rs:284",
-    "scope": null
-  },
-  {
     "name": "curve",
     "kind": "element",
     "title": "curve",
     "category": "visualize",
     "source": "crates/typst-library/src/visualize/curve.rs:43",
     "scope": null
+  },
+  {
+    "name": "curve.close",
+    "kind": "element",
+    "title": "Curve Close",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:365",
+    "scope": "curve"
+  },
+  {
+    "name": "curve.cubic",
+    "kind": "element",
+    "title": "Curve Cubic Segment",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:284",
+    "scope": "curve"
+  },
+  {
+    "name": "curve.line",
+    "kind": "element",
+    "title": "Curve Line",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:197",
+    "scope": "curve"
+  },
+  {
+    "name": "curve.move",
+    "kind": "element",
+    "title": "Curve Move",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:174",
+    "scope": "curve"
+  },
+  {
+    "name": "curve.quad",
+    "kind": "element",
+    "title": "Curve Quadratic Segment",
+    "category": "visualize",
+    "source": "crates/typst-library/src/visualize/curve.rs:237",
+    "scope": "curve"
   },
   {
     "name": "ellipse",
@@ -3850,25 +3914,9 @@
   {
     "name": "line",
     "kind": "element",
-    "title": "Curve Line",
-    "category": "visualize",
-    "source": "crates/typst-library/src/visualize/curve.rs:197",
-    "scope": null
-  },
-  {
-    "name": "line",
-    "kind": "element",
     "title": "line",
     "category": "visualize",
     "source": "crates/typst-library/src/visualize/line.rs:19",
-    "scope": null
-  },
-  {
-    "name": "move",
-    "kind": "element",
-    "title": "Curve Move",
-    "category": "visualize",
-    "source": "crates/typst-library/src/visualize/curve.rs:174",
     "scope": null
   },
   {
@@ -3886,14 +3934,6 @@
     "category": "visualize",
     "source": "crates/typst-library/src/visualize/polygon.rs:64",
     "scope": "polygon"
-  },
-  {
-    "name": "quad",
-    "kind": "element",
-    "title": "Curve Quadratic Segment",
-    "category": "visualize",
-    "source": "crates/typst-library/src/visualize/curve.rs:237",
-    "scope": null
   },
   {
     "name": "rect",

@@ -1,33 +1,24 @@
-﻿> Support note: This file supports the generated-index pipeline. Prefer the numbered reference tree for normal task routing.
+> Support note: This file maps generated fields back to upstream paths. Prefer the numbered reference tree for normal task routing.
 
 # Source Map
-
-## Purpose
-
-- Provide a compact map of upstream locations used by the generated indexes.
-- Help maintainers jump to the right source tree when a query result needs manual verification.
 
 ## Main Upstream Roots
 
 - Official library source: `typst/crates/typst-library/src/`
 - Official HTML source: `typst/crates/typst-html/src/`
+- Official CLI source: `typst/crates/typst-cli/src/args.rs`
 - Official docs source: `typst/docs/`
 - Blue-book source: `The Raindrop-Blue Book/src/`
 
 ## Generated Outputs
 
-- Comprehensive index: `skills/typst/reference/generated/typst-reference.json`
-- Comprehensive summary: `skills/typst/reference/generated/summary.md`
-- Lightweight official inventory: `skills/typst/reference/08-generated/typst-api-index.json`
-- Lightweight official summary: `skills/typst/reference/08-generated/typst-api-index.md`
+- Broad index: `skills/typst/reference/generated/typst-reference.json`
+- Broad summary: `skills/typst/reference/generated/summary.md`
+- Official inventory: `skills/typst/reference/08-generated/typst-api-index.json`
+- Official snapshot: `skills/typst/reference/08-generated/source-snapshot.json`
 
-## Cached Inputs Used By The Comprehensive Builder
+## External Metadata Used By The Broad Index
 
-- Typed HTML metadata from local `typst-assets` Cargo checkout
-- Symbol and emoji metadata from local `codex` Cargo registry sources
-
-## Open This File When
-
-- You are maintaining the generated-index scripts.
-- You need to verify where a generated field ultimately comes from.
-- You need a quick upstream path map without reopening the numbered docs tree.
+- Typed HTML metadata discovered from local Cargo git checkouts of `typst-assets`.
+- Symbol and emoji metadata discovered from local Cargo registry sources for `codex`.
+- These external paths are normalized into logical source labels inside generated artifacts.

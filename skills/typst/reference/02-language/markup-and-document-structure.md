@@ -2,23 +2,38 @@
 
 ## Use
 
-- Answer questions about Typst markup mode, structural elements, references, content blocks, and document organization.
+- Answer questions about markup mode, block structure, labels and references, imports, and semantic document organization.
 
 ## Authoritative Sources
 
 - `typst/docs/reference/language/syntax.md`
 - `typst/docs/tutorial/1-writing.md`
+- `typst/docs/tutorial/2-formatting.md`
 - `The Raindrop-Blue Book/src/tutorial/writing-markup.typ`
 
 ## Core Concepts
 
-- Typst fuses markup, code, and content into one language.
-- `#expr` embeds expressions, `[...]` creates content blocks, and `{...}` creates code blocks.
-- Prefer semantic elements such as headings, lists, figures, tables, labels, and references over manual visual imitation.
-- Keep stable labels separate from presentation text so references remain maintainable.
+- Typst fuses markup, content, and code into one language.
+- `#expr` embeds code into markup, `[...]` builds content, and `{...}` creates code blocks.
+- Use semantic elements such as headings, lists, figures, tables, quotes, terms, and references instead of manual visual imitation.
+- Keep labels stable and presentation-independent so references survive refactoring.
+- Use `import` for code and reusable definitions, and `include` for pulling another Typst document's content into the current flow.
 
-## Common Pitfalls
+## Structural Hotspots
 
-- Letting a `#` expression run longer than intended because the expression boundary is unclear.
-- Mixing content blocks and code blocks without remembering how values join.
-- Solving structure problems with manual spacing instead of semantic elements and styles.
+- heading hierarchy and outline generation
+- labels, `ref`, and `link` targets
+- list and term semantics
+- figure and table wrappers instead of ad hoc captions
+- document-level metadata such as `title`
+
+## Common Mistakes
+
+- letting a `#` expression continue longer than intended
+- using raw spacing to fake structure
+- styling plain text to look like a semantic element instead of using the real element
+- mixing `include` and `import` responsibilities
+
+## Exact Lookup
+
+- For exact element or function questions, run `python skills/typst/scripts/query_reference.py --query <keyword>`.

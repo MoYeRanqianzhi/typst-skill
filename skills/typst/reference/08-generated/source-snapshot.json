@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-09T05:12:16.721816+00:00",
+  "generated_at": "2026-03-09T12:08:05.077173+00:00",
   "typst": {
     "version": "0.14.2",
-    "changelog_date": null,
+    "changelog_date": "December 12, 2025",
     "branch": "main",
-    "commit": "364ece3"
+    "commit": "369ddd3"
   },
   "blue_book": {
     "branch": "main",
-    "commit": "f8d51ad",
+    "commit": "369ddd3",
     "has_readme": true,
     "has_cargo": true,
     "topic_roots": [
@@ -47,47 +47,47 @@
     "library": [
       {
         "slug": "data-loading",
-        "title": "Encoding",
+        "title": "Data Loading",
         "path": "docs/reference/library/data-loading.md"
       },
       {
         "slug": "foundations",
-        "title": "foundations",
+        "title": "Foundations",
         "path": "docs/reference/library/foundations.md"
       },
       {
         "slug": "introspection",
-        "title": "introspection",
+        "title": "Introspection",
         "path": "docs/reference/library/introspection.md"
       },
       {
         "slug": "layout",
-        "title": "layout",
+        "title": "Layout",
         "path": "docs/reference/library/layout.md"
       },
       {
         "slug": "math",
-        "title": "Variables",
+        "title": "Math",
         "path": "docs/reference/library/math.md"
       },
       {
         "slug": "model",
-        "title": "model",
+        "title": "Model",
         "path": "docs/reference/library/model.md"
       },
       {
         "slug": "symbols",
-        "title": "symbols",
+        "title": "Symbols",
         "path": "docs/reference/library/symbols.md"
       },
       {
         "slug": "text",
-        "title": "text",
+        "title": "Text",
         "path": "docs/reference/library/text.md"
       },
       {
         "slug": "visualize",
-        "title": "Accessibility",
+        "title": "Visualize",
         "path": "docs/reference/library/visualize.md"
       }
     ],
@@ -220,5 +220,9 @@
       ]
     }
   ],
-  "entry_count": 493
+  "entry_count": 498,
+  "coverage_notes": [
+    "This inventory focuses on official library/category entries extracted from typst-library source.",
+    "Use the broader query_reference pipeline for symbols, HTML attributes, and blue-book-backed lookups."
+  ]
 }

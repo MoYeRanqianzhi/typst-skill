@@ -2,7 +2,7 @@
 
 ## Use
 
-- Handle official `groups.yml` module pages and grouped helper functions that should not be mixed into category docs blindly.
+- Handle official `groups.yml` pages and grouped helper namespaces that should not be mixed blindly into category summaries.
 
 ## Authoritative Sources
 
@@ -10,16 +10,20 @@
 - `typst/docs/src/lib.rs`
 - `typst/crates/typst-library/src/foundations/**`
 - `typst/crates/typst-library/src/math/**`
+- `typst/crates/typst-library/src/symbols.rs`
 
-## Key Modules and Groups
+## Main Groups
 
-- `std` for access to globally visible definitions and shadowed names.
-- `calc` for computation and numeric helpers.
-- `sys` for version, inputs, and system-facing values.
-- `sym` and `emoji` for named symbols and emoji.
-- Math group pages such as variants, styles, sizes, roots, attach, and `lr`.
+- `std`: globally accessible definitions and a safe escape hatch when a name is shadowed.
+- `calc`: numeric and computational helpers plus constants such as `pi`, `tau`, `e`, and `inf`.
+- `sys`: runtime-facing values such as `sys.version` and `sys.inputs`.
+- `sym` and `emoji`: named symbols and emoji.
+- Math group pages: Variants, Styles, Sizes, Under/Over, Roots, Attach, and Left/Right.
+- Typed HTML group page: the `html` typed layer is documented as a grouped page rather than a plain library category.
 
 ## Guidance
 
-- Query exact module members with `query_reference.py` or `query_api_index.py` first.
-- Distinguish category pages from group pages, especially in math-heavy tasks.
+- Open grouped pages when an API is exposed through a namespace or grouped documentation page rather than the plain category document.
+- Do not assume every grouped item is imported by default.
+- Query exact module members with `query_reference.py` or `query_api_index.py` before answering exact API questions.
+- Distinguish grouped pages from library categories, especially in math-heavy tasks and system-input tasks.

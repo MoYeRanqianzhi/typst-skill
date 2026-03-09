@@ -2,49 +2,60 @@
 
 ## Role
 
-- This is the canonical current-state memory for the `typst` skill.
-- Keep this file concise, current, and authoritative.
-- Put detailed historical notes into `docs/typst-skill-memory.md`.
+- This file is the canonical current-state memory for the `typst` skill.
+- Keep it concise, readable, and authoritative.
+- Historical detail belongs in `docs/typst-skill-memory.md`.
 
 ## Project Summary
 
 - Project name: `Typst Skill`
 - Skill name: `typst`
-- Goal: provide a complete Typst Agent Skill for `Typst 0.14.2`, covering official workflows, language guidance, library reference, API lookup, debugging guidance, blue-book recipes, and version-risk notes.
+- Goal: provide a source-grounded Typst skill for authoring, debugging, templating, package work, source-level maintenance, and API lookup.
 
 ## Current Baseline
 
-- Official source snapshot: `./typst`
+- Official local snapshot: `./typst`
 - Chinese blue-book snapshot: `./The Raindrop-Blue Book`
-- Official stable version: `Typst 0.14.2`
-- Blue-book version traces: mixed `0.11`, `0.12.0`, and `0.13.1`, so version documents are mandatory.
+- Official Typst baseline used by the skill: `0.14.2`
+- Blue-book dependency baseline observed locally: `0.13.1`
+- Vendored snapshots are local directories without their own checked-in `.git` metadata in this repo, so upstream commit provenance is not machine-verifiable here.
 
-## Important Paths
+## Source Priority
 
-- `skills/typst/SKILL.md` - SOP and routing logic
-- `skills/typst/scripts/build_reference.py` - comprehensive cross-source index builder
-- `skills/typst/scripts/query_reference.py` - default cross-source query entry point
-- `skills/typst/scripts/refresh_typst_knowledge.py` - lightweight official inventory builder
-- `skills/typst/scripts/query_api_index.py` - lightweight official inventory query entry point
-- `skills/typst/reference/generated/` - comprehensive generated artifacts
-- `skills/typst/reference/08-generated/` - lightweight official inventory artifacts
+1. Raw official source under `typst/`
+2. Official docs under `typst/docs/`
+3. Generated indexes under `skills/typst/reference/generated/` and `skills/typst/reference/08-generated/`
+4. Blue-book explanations, templates, and recipes under `The Raindrop-Blue Book/`
+
+## Current Architecture
+
+- `skills/typst/SKILL.md` provides routing and the standard operating procedure.
+- `skills/typst/reference/` stores the layered workflow, language, library, recipe, dev, and versioning references.
+- `skills/typst/scripts/build_reference.py` builds the broad cross-source index.
+- `skills/typst/scripts/query_reference.py` is the default broad lookup entry point.
+- `skills/typst/scripts/refresh_typst_knowledge.py` builds the lightweight official inventory.
+- `skills/typst/scripts/query_api_index.py` is the fast official inventory query tool.
 
 ## Maintenance Workflow
 
-1. Update local `typst` or blue-book snapshots.
+1. Refresh local `typst/` and `The Raindrop-Blue Book/` snapshots when needed.
 2. Run `python skills/typst/scripts/build_reference.py`.
 3. Run `python skills/typst/scripts/refresh_typst_knowledge.py`.
-4. Check `skills/typst/reference/generated/` and `skills/typst/reference/08-generated/`.
-5. If the Typst version changes, update `skills/typst/reference/07-versioning/`.
-6. Run `python C:/Users/MoYeR/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/typst`.
+4. Verify representative lookups: `global.assert`, `global.pagebreak`, `sym.arrow.r`, `figure.caption`, `table.cell`, `curve.move`, and `place.flush`.
+5. Review `skills/typst/reference/generated/summary.md` and `skills/typst/reference/08-generated/typst-api-index.md`.
+6. Update `skills/typst/reference/07-versioning/` if the Typst baseline changes.
+7. Run `python C:/Users/MoYeR/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/typst`.
 
-## Design Decisions
+## Verified Index Coverage
 
-- `SKILL.md` handles routing; `reference/` handles detailed knowledge.
-- Official Typst docs/source take precedence over the blue book.
-- Keep two index layers: a broad default index and a fast official-only inventory.
-- Prefer concise references and progressive disclosure over large monolithic docs.
+- Broad index now resolves `global.*` aliases emitted through helper `define(&mut global)` paths, including `global.assert`, `global.pagebreak`, `global.target`, and `global.length`.
+- Broad index now preserves scoped element names declared through `#[scope] impl ... { #[elem] type ...; }`, including `figure.caption`, `table.cell`, `curve.move`, and `place.flush`.
+- Symbol inventory now expands nested symbol families from `sym.txt`, including exact names such as `sym.arrow.r` and `sym.arrow.r.squiggly`.
+- Fast official inventory under `reference/08-generated/` now emits scoped names for figure, table, curve, and place sub-elements instead of flattening them to top-level names.
 
-## Encoding
+## Documentation Rules
 
-- Store all Skill and docs files as UTF-8 without BOM when possible.
+- Keep current rules here.
+- Move dated implementation history to `docs/typst-skill-memory.md`.
+- Track active blockers in `docs/known-issues.md`.
+- Track milestone-style project updates in `docs/changelog.md`.

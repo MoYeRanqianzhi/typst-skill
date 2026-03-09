@@ -2,42 +2,40 @@
 
 ## Role
 
-- This file is the append-only shared implementation log for the `typst` skill.
-- Keep current-state guidance in `docs/project-memory.md`.
-- Put detailed historical facts, decisions, and implementation notes here.
+- This file is the append-only implementation and verification log.
+- Do not store the canonical current state here; `docs/project-memory.md` owns that role.
 
-## Confirmed Upstream Facts
+## 2026-03-09 Initial Snapshot
 
-- Typst version: `0.14.2`
-- Typst commit used during implementation: `364ece3cb37975f509a779fc3ddc929285971d73`
-- Typst remote: `https://github.com/typst/typst`
-- Blue-book commit used during implementation: `f8d51ad0cb99a886dbe347f0d71c4f3a49c1f59f`
-- Blue-book remote: `https://github.com/typst-doc-cn/tutorial`
+- Confirmed the local official Typst baseline as `0.14.2` from `typst/Cargo.toml`.
+- Observed the blue-book dependency baseline as `0.13.1` from `The Raindrop-Blue Book/Cargo.toml`.
+- Created `skills/typst/` and `docs/`.
+- Added `SKILL.md`, `agents/openai.yaml`, the layered reference tree, and the generated index scripts.
 
-## Key Technical Decisions
+## 2026-03-09 Verification Snapshot
 
-- Do not rely on conversational context as the only memory.
-- Prefer local upstream source and docs over recollection.
-- Use `build_reference.py` and `query_reference.py` as the default cross-source search layer.
-- Keep `refresh_typst_knowledge.py` and `query_api_index.py` as a lighter official inventory path.
-- Keep blue-book content as a secondary source for explanation, templates, and Chinese recipes.
+- Ran the first 16-way concurrent completeness review across SOP, docs, reference pages, scripts, generated artifacts, and versioning notes.
+- Found multiple corrupted reference pages and repaired workflow, language, library, recipe, dev, and versioning references.
+- Improved cross-source queryability, including HTML attributes and official inventory filters.
+- Launched a second 15-way concurrent final acceptance review.
+- Second final acceptance review still found blockers in docs memory quality, changelog / known-issues traceability, and broad index generator consistency.
 
-## Environment Notes
+## 2026-03-09 Index Repair Snapshot
 
-- `cargo run -p typst-docs` debug builds were blocked on this machine by Windows linker or PDB issues.
-- `cargo run --release -p typst-docs` was previously blocked by disk pressure.
-- Because of this, the current skill relies on a source-parsing index pipeline instead of a direct `typst-docs` JSON artifact.
+- Repaired `build_reference.py` so scoped sub-elements declared through `#[scope] impl ... { #[elem] type ...; }` are emitted with exact qualified names instead of flattened top-level names.
+- Repaired `refresh_typst_knowledge.py` with the same scoped-member recovery logic, fixing official inventory records such as `figure.caption`, `table.cell`, `curve.move`, and `place.flush`.
+- Expanded `build_reference.py` binding extraction to scan helper `global.define_*` calls outside the single `Module::new("global", ...)` file, restoring exact `global.*` coverage.
+- Expanded symbol parsing so nested `sym.txt` members become first-class lookup keys like `sym.arrow.r` and `sym.arrow.r.squiggly`.
+- Rebuilt both generated index layers and revalidated the repaired queries through `query_reference.py` and `query_api_index.py`.
 
-## Historical Milestones
+## Historical Decisions
 
-- 2026-03-09: initialized the root repo and created `skills/typst/` and `docs/`.
-- 2026-03-09: confirmed local Typst baseline as `0.14.2`.
-- 2026-03-09: added SOP, layered references, index builders, and query scripts.
-- 2026-03-09: added dual-index routing and version-risk notes.
-- 2026-03-09: aligned `data-loading` naming with official docs and added a `symbols` reference page.
+- The skill uses two index layers: a broad cross-source index and a fast official inventory.
+- Official source and docs are authoritative; the blue book is secondary and recipe-oriented.
+- Because direct `typst-docs` generation is blocked in this environment, committed generated artifacts are produced by local source-grounded scripts.
 
-## Future Follow-Up
+## Follow-up Candidates
 
-- If the environment allows, compare the custom index output against a true `typst-docs` artifact.
-- Refine `query_reference.py` ranking based on real usage feedback.
-- Expand typed HTML and accessibility recipes if future usage shows they need more depth.
+- Replace local vendored snapshot provenance with a checked-in manifest if verifiable upstream commit tracking becomes required.
+- Add a stable acceptance checklist for representative queries such as `pdf.artifact`, `math.thin`, `figure.caption`, and HTML attribute lookups.
+- Add a lightweight automated smoke-test script for representative query samples if future acceptance needs to be repeatable in one command.

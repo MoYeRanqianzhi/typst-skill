@@ -2,7 +2,7 @@
 
 ## Use
 
-- Handle math mode, symbols, formula structure, and text-versus-math boundary questions.
+- Handle math mode, text-versus-math boundaries, symbol lookup, and formula structure questions.
 
 ## Authoritative Sources
 
@@ -10,17 +10,28 @@
 - `typst/docs/reference/library/math.md`
 - `typst/docs/reference/library/symbols.md`
 - `The Raindrop-Blue Book/src/tutorial/writing-math.typ`
-- `The Raindrop-Blue Book/src/tutorial/reference-math-*.typ`
 
 ## Core Concepts
 
-- Math mode and text mode have different spacing, binding, and semantic rules.
-- Prefer built-in math API over manual glyph composition.
-- `sym`, `emoji`, and `math` serve different symbol roles.
-- For complex formulas, check matrix, root, attachment, delimiter, and math-class APIs explicitly.
+- Math mode and text mode follow different spacing and parsing rules.
+- Prefer built-in math functions and structures over manual glyph composition.
+- `sym`, `emoji`, and math syntax solve different classes of symbol problems.
+- For non-trivial formulas, check matrix, delimiter, attachment, and variant APIs explicitly.
 
-## Common Pitfalls
+## High-Value Topics
 
-- Applying text styling assumptions directly to math content.
-- Ignoring default attachment and delimiter behavior.
-- Remembering syntax but not checking the actual math element or API that controls it.
+- inline versus block equations
+- `mat`, `vec`, `cases`, `frac`, `root`, `sqrt`
+- attachments, scripts, fences, and delimiters
+- shorthand-like symbols versus named symbol access
+- accessibility-sensitive math such as `math.equation.alt`
+
+## Common Mistakes
+
+- applying text styling assumptions directly inside math
+- guessing symbol names instead of querying them
+- forgetting that delimiter and attachment behavior is semantic, not just visual
+
+## Exact Lookup
+
+- Use `query_reference.py` for symbol-heavy lookups because the broad index covers far more symbol data than the lightweight inventory.

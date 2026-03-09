@@ -4,7 +4,11 @@
 /dist/
 /target/
 __pycache__/
+**/__pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.py[cod]
 .DS_Store
 Thumbs.db
 /--help/

@@ -55,6 +55,7 @@
 
 ## Documentation Rules
 
+- Keep recursive Python cache ignore rules in root `.gitignore` (`**/__pycache__/`, `*.py[cod]`) so local bytecode never blocks rebase or branch switching again.
 - Keep current rules here.
 - Move dated implementation history to `docs/typst-skill-memory.md`.
 - Track active blockers in `docs/known-issues.md`.

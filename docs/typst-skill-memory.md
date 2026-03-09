@@ -27,6 +27,7 @@
 - Expanded `build_reference.py` binding extraction to scan helper `global.define_*` calls outside the single `Module::new("global", ...)` file, restoring exact `global.*` coverage.
 - Expanded symbol parsing so nested `sym.txt` members become first-class lookup keys like `sym.arrow.r` and `sym.arrow.r.squiggly`.
 - Rebuilt both generated index layers and revalidated the repaired queries through `query_reference.py` and `query_api_index.py`.
+- Hardened root `.gitignore` with recursive Python cache patterns after a rebase was blocked by local `__pycache__` artifacts under `skills/typst/scripts/`.
 
 ## Historical Decisions
 

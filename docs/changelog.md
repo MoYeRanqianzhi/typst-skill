@@ -19,3 +19,4 @@
 - Repaired nested symbol expansion from `sym.txt`, including exact lookups such as `sym.arrow.r` and `sym.arrow.r.squiggly`.
 - Rebuilt `skills/typst/reference/generated/typst-reference.json` and `skills/typst/reference/08-generated/typst-api-index.json` after the parser fixes.
 - Re-ran targeted regression checks for the repaired index classes and confirmed the previously blocking lookup samples now pass.
+- Hardened root `.gitignore` with recursive Python cache rules so `__pycache__` artifacts no longer block rebase or branch switching.

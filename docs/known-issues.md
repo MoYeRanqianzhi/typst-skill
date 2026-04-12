@@ -17,6 +17,28 @@
 - Earlier `cargo run --release -p typst-docs` attempts were also limited by disk pressure.
 - Because of this, the current skill relies on source parsing plus generated indexes instead of a direct `typst-docs` artifact.
 
+## Chinese Typesetting Traps
+
+- Typst string literals interpret Chinese full-width quotes `""` `''` as string delimiters, causing compilation errors. Use `「」` `『』` instead. Documented in `chinese-typesetting.md`.
+- Cross-platform CJK font availability varies: `Microsoft YaHei` absent on Linux/macOS, `SimSun` absent on macOS. Reference docs now recommend fallback chains.
+
+## Version Mismatch
+
+- SKILL.md targets Typst 0.14.2 but local CLI is 0.13.1. Reference docs should note minimum version for 0.14.x-specific features.
+
+## Reference Documentation Gaps (Partially Addressed)
+
+- v0.4.0 expanded all 2/5-scored files with code examples. Remaining gaps:
+  - `data-loading.md`, `introspection.md`, `symbols.md` still at 3/5 (no code examples).
+  - `plugins-html-pdf-svg-png.md`, `state-counter-query-locator.md` at 3/5.
+  - No reference for: font management, custom numbering, PDF metadata, multi-file projects, Typst vs LaTeX migration.
+
+## Scripts Quality Notes
+
+- `query_reference.py`: function names (`rit`/`rdoc`/`rgrep`) are terse; `infer_root()` uses hardcoded `parents[4]`.
+- `refresh_typst_knowledge.py`: no argparse, `--help` triggers full refresh; depends on `yaml` without install check.
+- Two parallel index systems (`generated/` vs `08-generated/`) add maintenance cost.
+
 ## Current Acceptance Blockers
 
 - No confirmed active blocker remains in the three previously failing index classes: helper-driven `global.*`, scoped sub-elements, and nested symbol exact lookups were repaired on 2026-03-09 and revalidated locally.

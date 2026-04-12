@@ -29,8 +29,14 @@
 
 ## Current Architecture
 
-- `skills/typst/SKILL.md` provides routing and the standard operating procedure.
-- `skills/typst/reference/` stores the layered workflow, language, library, recipe, dev, and versioning references.
+- `skills/typst/SKILL.md` (97 lines, v0.4.0) provides routing and the standard operating procedure.
+  - L1 description: ~30 words, "Use when..." format.
+  - Routing: Quick intent check → Error triage → Subsystem routes → Creating from scratch.
+  - Workflow: 7 steps including Verify + If-stuck fallback.
+- `skills/typst/reference/` stores the layered references, now with code examples in all core files.
+  - `02-language/`: 4 files, all expanded to 140-173 lines with runnable Typst code.
+  - `03-library/`: 6 files, key files expanded to 80-197 lines with API examples.
+  - `05-recipes/`: 5 files, patterns and chinese-typesetting expanded with templates.
 - `skills/typst/scripts/build_reference.py` builds the broad cross-source index.
 - `skills/typst/scripts/query_reference.py` is the default broad lookup entry point.
 - `skills/typst/scripts/refresh_typst_knowledge.py` builds the lightweight official inventory.
@@ -44,7 +50,7 @@
 4. Verify representative lookups: `global.assert`, `global.pagebreak`, `sym.arrow.r`, `figure.caption`, `table.cell`, `curve.move`, and `place.flush`.
 5. Review `skills/typst/reference/generated/summary.md` and `skills/typst/reference/08-generated/typst-api-index.md`.
 6. Update `skills/typst/reference/07-versioning/` if the Typst baseline changes.
-7. Run `python C:/Users/MoYeR/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/typst`.
+7. Validate with `<skill-creator-path>/scripts/quick_validate.py skills/typst`.
 
 ## Verified Index Coverage
 

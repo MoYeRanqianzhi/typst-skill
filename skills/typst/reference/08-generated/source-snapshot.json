@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-09T12:08:05.077173+00:00",
+  "generated_at": "2026-04-12T12:26:36.835019+00:00",
   "typst": {
     "version": "0.14.2",
     "changelog_date": "December 12, 2025",
     "branch": "main",
-    "commit": "369ddd3"
+    "commit": "062eade"
   },
   "blue_book": {
     "branch": "main",
-    "commit": "369ddd3",
+    "commit": "062eade",
     "has_readme": true,
     "has_cargo": true,
     "topic_roots": [

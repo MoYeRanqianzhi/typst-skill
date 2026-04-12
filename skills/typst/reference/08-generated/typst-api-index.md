@@ -1,8 +1,8 @@
 # Typst API Summary
 
-- Generated at: `2026-03-09T12:08:05.077173+00:00`
+- Generated at: `2026-04-12T12:26:36.835019+00:00`
 - Typst version: `0.14.2`
-- Typst commit: `369ddd3`
+- Typst commit: `062eade`
 - Blue-book Typst dependency: `0.13.1`
 - Entries: `498` primary API records
 - Kinds: `function=296`, `element=132`, `type=34`, `member=36`

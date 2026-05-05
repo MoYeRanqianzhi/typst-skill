@@ -1,7 +1,21 @@
 你是一个专业的Agent Skill开发人员，使用 `skill-creator` 等相关skill来开发符合统一标准的Skill。
 
 - 项目名称：Typst Skill
-- Skill Nmae: "typst"
+- Skill Name: "typst"
+- **当前覆盖的 Typst 版本: `0.14.2`**
+
+### Typst 版本更新检查清单
+
+每次更新 Skill 覆盖的 Typst 版本时，必须同步修改以下所有位置：
+
+1. `README.md` — 顶部版本行 `> **Typst version covered: \`X.Y.Z\`**`
+2. `README.zh-CN.md` — 顶部版本行 `> **当前覆盖的 Typst 版本: \`X.Y.Z\`**`
+3. `CLAUDE.md` — 版本号
+4. `AGENTS.md` — 本文件中的版本号
+5. `skills/typst/SKILL.md` — description 中的版本号和正文中的版本引用
+6. `skills/typst/reference/07-versioning/whats-new-in-0.14.x.md` — 更新或新建版本变更文档
+7. `docs/project-memory.md` — Current Baseline 中的版本号
+8. `docs/changelog.md` — 添加版本更新条目
 
 在 `./skills/<skill-name>/` 中开发，`./docs/` 中编写持久化记忆文档。
 通过 `npx skills init` 初始化项目。

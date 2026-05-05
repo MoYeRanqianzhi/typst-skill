@@ -1,94 +1,96 @@
 # Typst Skill
 
-一个面向 AI Agent 的 [Typst](https://typst.app) 专家技能，提供源码级 API 查询、分层参考文档和标准工作流，覆盖 Typst 0.14.2。
+> **Typst version covered: `0.14.2`**
 
-## 特性
+A source-grounded [Typst](https://typst.app) expert skill for AI agents, providing layered reference docs, API query tools, and a standard routing workflow.
 
-- **智能路由** — 根据任务类型（创建 / 调试 / 解释 / 模板）自动导航到最相关的参考文档
-- **33 篇分层参考文档** — 涵盖工作流、语言核心、标准库、配方、版本变更，均包含可运行代码示例
-- **双索引查询系统** — `query_reference.py`（广覆盖：API + 文档 + 蓝皮书 + grep）和 `query_api_index.py`（快速官方索引）
-- **中文排版支持** — 字体配置、中英混排、引号陷阱警告、标点规则，基于《雨滴蓝皮书》
-- **渐进式披露** — L1 描述 (~30 词) → L2 SKILL.md (97 行) → L3 按需加载参考文档和脚本
+## Features
 
-## 快速开始
+- **Smart Routing** — Automatically navigates to the most relevant reference doc based on task type (create / debug / explain / template)
+- **33 Layered Reference Docs** — Covering workflows, language core, standard library, recipes, and versioning — all with runnable code examples
+- **Dual Index Query System** — `query_reference.py` (broad: API + docs + blue-book + grep) and `query_api_index.py` (fast official index)
+- **Chinese Typesetting Support** — Font configuration, CJK mixed-script, quote-trap warnings, punctuation rules, powered by the Raindrop Blue Book
+- **Progressive Disclosure** — L1 description (~30 words) → L2 SKILL.md (97 lines) → L3 on-demand reference docs and scripts
 
-### 安装
+## Quick Start
+
+### Install
 
 ```bash
 npx skills add MoYeRanqianzhi/typst-skill@typst -g -y
 ```
 
-> 更多安装方式（手动安装、无 npx 环境等）请参阅 [docs/INSTALL.md](docs/INSTALL.md)
+> For more installation methods (manual install, no-npx environments, etc.), see [docs/INSTALL.md](docs/INSTALL.md)
 
-### 发送给任意 AI Agent
+### Give This to Any AI Agent
 
-将以下内容发送给你的 AI Agent 即可自动安装：
+Copy the following line and send it to your AI agent to install automatically:
 
 ```
 Install the Typst skill by following the instructions at: https://raw.githubusercontent.com/MoYeRanqianzhi/typst-skill/main/docs/INSTALL.md
 ```
 
-### 验证
+### Verify
 
-安装后，向 Agent 提问：
+After installation, ask your agent:
 
 ```
-帮我写一个 Typst 中文学术论文模板
+Write a minimal Typst document with a title and paragraph.
 ```
 
-如果技能加载成功，Agent 会通过 SKILL.md 路由到 `book-paper-slide-cv-patterns.md` 和 `chinese-typesetting.md`，并产出可编译的 Typst 代码。
+If the skill is loaded correctly, the agent will route through SKILL.md, reference the appropriate docs, and produce compilable Typst code.
 
-## 目录结构
+## Directory Structure
 
 ```
 skills/typst/
-├── SKILL.md                       # 核心 SOP — 路由、工作流、权威层级
-├── scripts/                       # 确定性查询工具
-│   ├── query_reference.py         # 广覆盖查询（API + 文档 + 蓝皮书 + grep）
-│   ├── query_api_index.py         # 快速官方 API 索引查询
-│   ├── build_reference.py         # 构建综合引用数据库
-│   └── refresh_typst_knowledge.py # 刷新 API 索引
-└── reference/                     # 33 篇分层参考文档
-    ├── 01-workflows/              # 编译、调试、发布、模板
-    ├── 02-language/               # 标记、样式、脚本、数学
-    ├── 03-library/                # 布局、文本、模型、可视化等
-    ├── 05-recipes/                # 简历、论文、幻灯片、中文排版
-    ├── 07-versioning/             # 版本变更、蓝皮书差异
-    └── 08-generated/              # 自动生成的 API 索引
+├── SKILL.md                       # Core SOP — routing, workflow, authority
+├── scripts/                       # Deterministic query tools
+│   ├── query_reference.py         # Broad cross-source lookup (API + docs + blue-book + grep)
+│   ├── query_api_index.py         # Fast official API index query
+│   ├── build_reference.py         # Build comprehensive reference DB
+│   └── refresh_typst_knowledge.py # Refresh API index from source
+└── reference/                     # 33 layered reference docs
+    ├── 01-workflows/              # Compile, debug, publish, templates
+    ├── 02-language/               # Markup, styling, scripting, math
+    ├── 03-library/                # Layout, text, model, visualize, etc.
+    ├── 05-recipes/                # CV, paper, slides, Chinese typesetting
+    ├── 07-versioning/             # What's new, blue-book gaps
+    └── 08-generated/              # Auto-generated API index
 ```
 
-## 工作原理
+## How It Works
 
 ```
-用户请求 → SKILL.md 路由表 → 最小匹配参考文档 → query_reference.py 精确查询 → 生成可运行代码
+User request → SKILL.md route table → smallest matching reference → query_reference.py → runnable code
 ```
 
-**权威层级**: 官方源码 > 生成索引 > 蓝皮书
+**Authority hierarchy**: Official source > Generated indexes > Blue Book
 
-**路由流程**:
-1. Quick intent check — 创建 / 解释 / 修复 / 修改
-2. Error triage — 语法 / 类型 / 字体 / 状态 / 布局 / 版本
-3. Subsystem routes — 按子系统精确导航
-4. Creating from scratch — 快速起步路径
+**Routing flow**:
+1. Quick intent check — create / explain / fix / modify
+2. Error triage — syntax / type / font / state / layout / version
+3. Subsystem routes — precise per-subsystem navigation
+4. Creating from scratch — quick-start path
 
-## 测试结果
+## Test Results
 
-使用"可爱小猫简历"作为端到端测试：
+End-to-end test using a "Cute Cat Resume":
 
-| 维度 | v0.3.0 | v0.4.0 | 变化 |
-|------|:------:|:------:|:----:|
-| 路由体验 | 4/5 | 5/5 | +1 |
-| 参考文档 | 3/5 | 4.7/5 | +1.7 |
-| 脚本工具 | 4/5 | 4/5 | — |
-| 编写体验 | 4/5 | 4.8/5 | +0.8 |
-| **综合** | **3.75** | **4.6** | **+0.85** |
+| Dimension | v0.3.0 | v0.4.0 | Delta |
+|-----------|:------:|:------:|:-----:|
+| Routing | 4/5 | 5/5 | +1 |
+| Reference Docs | 3/5 | 4.7/5 | +1.7 |
+| Query Tools | 4/5 | 4/5 | — |
+| Writing Experience | 4/5 | 4.8/5 | +0.8 |
+| **Overall** | **3.75** | **4.6** | **+0.85** |
 
-## 依赖
+## Dependencies
 
-- **Python 3.10+** — 查询脚本运行环境
-- **Typst CLI** — 编译 `.typ` 文件 ([安装](https://github.com/typst/typst/releases))
-- **PyYAML** — `refresh_typst_knowledge.py` 需要 (`pip install pyyaml`)
+- **Python 3.10+** — Required for query scripts
+- **Typst CLI** — Required for compiling `.typ` files ([install](https://github.com/typst/typst/releases))
+- **PyYAML** — Required by `refresh_typst_knowledge.py` (`pip install pyyaml`)
 
-## 许可
+## License
 
 MIT

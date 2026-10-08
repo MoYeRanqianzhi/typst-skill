@@ -7,9 +7,15 @@
 
 ## Provenance Limits
 
-- In this repo, `typst/` and `The Raindrop-Blue Book/` are vendored local directories without their own checked-in `.git` metadata.
-- Because of that, upstream commit provenance for those snapshots is not machine-verifiable from this workspace alone.
-- Any exact upstream commit claims must be treated as external notes unless backed by a checked-in manifest.
+- `typst/` and `The Raindrop-Blue Book/` are now independent, ignored Git clones. Their retrieved upstream commits are recorded in [Current Baseline](project-memory.md#current-baseline) and can be verified with `git -C <directory> rev-parse HEAD`.
+- These local clones and their Git histories are not included when cloning the skill repository.
+- Existing generated artifacts predate these clones and contain parent-project commit IDs rather than verified upstream IDs. Use the source checkout record for current provenance until the generators are adapted and the artifacts rebuilt.
+
+## Source Refresh Compatibility
+
+- The downloaded official source declares `0.15.1`, while the skill and both committed index layers still target `0.14.2`.
+- Official documentation content now lives in `typst/docs/content/**/*.typ`. `build_reference.py` still indexes Markdown files, and `refresh_typst_knowledge.py` still expects `docs/reference/**/*.md` and `docs/reference/groups.yml`, which are absent from the new checkout.
+- The repository refresh does not regenerate the indexes or validate the skill against `0.15.1`. Generator adaptation and version-reference review must precede that update; existing indexed paths and line numbers may not match the new source.
 
 ## Environment Blockers
 

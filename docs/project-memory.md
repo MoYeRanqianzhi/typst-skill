@@ -14,11 +14,21 @@
 
 ## Current Baseline
 
-- Official local snapshot: `./typst`
-- Chinese blue-book snapshot: `./The Raindrop-Blue Book`
-- Official Typst baseline used by the skill: `0.14.2`
-- Blue-book dependency baseline observed locally: `0.13.1`
-- Vendored snapshots are local directories without their own checked-in `.git` metadata in this repo, so upstream commit provenance is not machine-verifiable here.
+- Official local checkout: `./typst`
+- Chinese blue-book checkout: `./The Raindrop-Blue Book`
+- Official source manifest version: `0.15.1`; the skill and committed indexes still target `0.14.2`.
+- Blue-book dependency baseline observed locally: `0.13.1`.
+- Both source directories are independent shallow Git clones, ignored by the skill repository. Their upstream commits are verifiable locally; cloning the skill repository alone does not include them.
+
+Upstream default branches retrieved on `2026-10-08`:
+
+| Source | Upstream | Branch | Commit |
+| --- | --- | --- | --- |
+| Official source and docs | [typst/typst](https://github.com/typst/typst) | `main` | `e58a63af09032a486b12241d08ebd04131483221` |
+| Chinese blue book | [typst-doc-cn/tutorial](https://github.com/typst-doc-cn/tutorial) | `main` | `b2e19b6c9ddcec580c9f5b2741bd3b323b2eaf8c` |
+
+- The blue book's three submodules are checked out at the revisions pinned by its parent repository.
+- These are default-branch checkouts, not release-tag checkouts. Downloading them does not establish skill compatibility with their newer content.
 
 ## Source Priority
 
@@ -44,7 +54,7 @@
 
 ## Maintenance Workflow
 
-1. Refresh local `typst/` and `The Raindrop-Blue Book/` snapshots when needed.
+1. Update the local clones with `git -C typst pull --ff-only` and `git -C "The Raindrop-Blue Book" pull --ff-only`, followed by `git -C "The Raindrop-Blue Book" submodule update --init --recursive`. Before rebuilding against the current source, adapt the index generators to `docs/content/**/*.typ` and the replacement for the former `docs/reference/groups.yml`; they still expect the older Markdown/YAML layout.
 2. Run `python skills/typst/scripts/build_reference.py`.
 3. Run `python skills/typst/scripts/refresh_typst_knowledge.py`.
 4. Verify representative lookups: `global.assert`, `global.pagebreak`, `sym.arrow.r`, `figure.caption`, `table.cell`, `curve.move`, and `place.flush`.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-09 — Typst 0.15.1 redesign
+
+- Replaced the previous routed manual and dual source-parser indexes with a task-oriented entrypoint, eight focused guides, and one portable official-documentation lookup tool.
+- Added exact scoped-member and parameter resolution, symbol metadata, typed HTML discovery, explicit provenance, cached reading, and documentation-version checks.
+- Rebased guidance on the latest verified stable release, including `path`, `selector.within`, multiple bibliographies, `typst eval`, MathML, and experimental bundle export.
+- Removed the runtime dependency on local source checkouts and PyYAML. Replaced mental verification guidance with compilation and target-appropriate output inspection.
+- Replaced obsolete agent-memory documents with contributor maintenance documentation and `.agents/` records. Historical reviews below describe previous releases only.
+
 ## 2026-04-12 — v0.4.0: Reference Expansion & SKILL.md Rewrite
 
 ### SKILL.md Rewrite (Phase 1)
@@ -51,4 +59,4 @@
 - Repaired nested symbol expansion from `sym.txt`, including exact lookups such as `sym.arrow.r` and `sym.arrow.r.squiggly`.
 - Rebuilt `skills/typst/reference/generated/typst-reference.json` and `skills/typst/reference/08-generated/typst-api-index.json` after the parser fixes.
 - Re-ran targeted regression checks for the repaired index classes and confirmed the previously blocking lookup samples now pass.
-- Hardened root `.gitignore` with recursive Python cache rules so `__pycache__` artifacts no longer block rebase or branch switching.
+- Added Python cache ignore rules; these exclude untracked caches but cannot resolve collisions involving historically tracked files.

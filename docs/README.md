@@ -1,18 +1,9 @@
-# Typst Skill Docs
+# Contributor documentation
 
-This directory is the long-term shared memory for the `typst` skill.
+- [Installation](INSTALL.md): installing and checking a standalone skill copy.
+- [Design and maintenance](maintenance.md): architecture, source provenance, and refreshing a release baseline.
+- [Validation](validation.md): reproducible checks and the limits of their evidence.
+- [Known limitations](known-issues.md): network, version, and output-validation boundaries.
+- [Changelog](changelog.md): user-visible changes.
 
-## Roles
-
-- `docs/project-memory.md` stores canonical current-state facts and maintenance rules.
-- `docs/typst-skill-memory.md` stores append-only history, repair notes, and verification snapshots.
-- `docs/changelog.md` stores human-readable project milestones tied to local repo evidence.
-- `docs/known-issues.md` stores active blockers, risks, and trust boundaries.
-
-## Update Rules
-
-- Put only current-state guidance in `project-memory.md`.
-- Put dated history and repair snapshots in `typst-skill-memory.md`.
-- Put current blockers and limitations in `known-issues.md`.
-- Put release-style milestones in `changelog.md`.
-- Do not rely on chat context as the only memory source.
+The files under `reviews/` describe the superseded 0.4-era skill; their scores, paths, and recommendations are historical, not acceptance evidence for the redesigned skill. Current agent recovery information belongs in `.agents/`, with machine-specific records ignored locally.

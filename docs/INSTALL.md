@@ -1,151 +1,52 @@
-# Installing the Typst Skill
+# Installing the Typst skill
 
-This document describes how to install the `typst` skill for AI agents. Follow the section that matches your environment.
+Install the **complete** `skills/typst/` directory from [MoYeRanqianzhi/typst-skill](https://github.com/MoYeRanqianzhi/typst-skill). It contains the entrypoint, references, bundled catalog, and scripts. Sibling source checkouts and repository maintenance records are not runtime dependencies.
 
-## Skill Source
+## Skill manager
 
-- **Repository**: `https://github.com/MoYeRanqianzhi/typst-skill.git`
-- **Skill path inside repo**: `skills/typst/`
-- **Spec**: [agentskills.io/specification](https://agentskills.io/specification)
-
----
-
-## Option A: Install via `npx skills` (Recommended)
-
-If you have Node.js (v18+) installed:
-
-```bash
+```sh
 npx skills add MoYeRanqianzhi/typst-skill@typst -g -y
 ```
 
-This installs the skill globally. To verify:
+Omit `-g` for a project-local installation supported by the manager. Choose the agent targets and installation scope you intend to change.
 
-```bash
-npx skills list
+## Manual installation
+
+Clone the repository and copy `skills/typst/` into the skill directory configured for your agent. For example, if your agent uses `~/.agents/skills`:
+
+```sh
+git clone https://github.com/MoYeRanqianzhi/typst-skill.git
+mkdir -p ~/.agents/skills
+cp -R typst-skill/skills/typst ~/.agents/skills/typst
 ```
 
-You should see `typst` in the output.
+PowerShell equivalent, with the target chosen for your agent:
 
-### Update
-
-```bash
-npx skills update
+```powershell
+$skillTarget = Join-Path $env:USERPROFILE '.agents/skills'
+New-Item -ItemType Directory -Path $skillTarget -Force
+Copy-Item -Recurse -LiteralPath 'typst-skill/skills/typst' -Destination $skillTarget
 ```
 
----
-
-## Option B: Install via `npx skills` (Non-Global)
-
-To install into the current project only (not globally):
-
-```bash
-npx skills add MoYeRanqianzhi/typst-skill@typst
-```
-
-The skill will be available only in the current working directory.
-
----
-
-## Option C: Manual Install (No npx / No Node.js)
-
-### For Claude Code
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/MoYeRanqianzhi/typst-skill.git
-   ```
-
-2. Copy the skill directory to your Claude Code skills path:
-   ```bash
-   # Linux / macOS
-   cp -r typst-skill/skills/typst ~/.claude/skills/typst
-
-   # Windows (PowerShell)
-   Copy-Item -Recurse typst-skill\skills\typst $env:USERPROFILE\.claude\skills\typst
-   ```
-
-3. Verify the skill is loaded by starting Claude Code and checking the skill list.
-
-### For Codex / Other Agents
-
-1. Clone the repository (same as above).
-
-2. Copy the skill directory to your agent's skills path:
-   ```bash
-   # Codex default path
-   cp -r typst-skill/skills/typst ~/.agents/skills/typst
-   ```
-
-3. Alternatively, symlink the skill:
-   ```bash
-   ln -s /absolute/path/to/typst-skill/skills/typst ~/.agents/skills/typst
-   ```
-
----
-
-## Option D: Manual Install (Minimal — SKILL.md Only)
-
-If you only want the core skill without scripts or reference data:
-
-1. Download `SKILL.md`:
-   ```bash
-   curl -o SKILL.md https://raw.githubusercontent.com/MoYeRanqianzhi/typst-skill/main/skills/typst/SKILL.md
-   ```
-
-2. Place it in your agent's skills directory:
-   ```bash
-   mkdir -p ~/.claude/skills/typst
-   mv SKILL.md ~/.claude/skills/typst/
-   ```
-
-> **Note**: Without the `reference/` and `scripts/` directories, the skill will have limited functionality — no bundled API index, no query tools, and no code examples in references.
-
----
+If that destination already contains a customized skill, review it before replacing it. During updates, replace the old skill as a directory instead of merging obsolete `reference/` files and retired scripts into the new installation. Keep personal backups outside the installed skill directory so agents do not discover stale instructions.
 
 ## Dependencies
 
-- **Python 3.10+** — Required for query scripts (`query_reference.py`, `query_api_index.py`)
-- **PyYAML** — Required by `refresh_typst_knowledge.py` (`pip install pyyaml`)
-- **Typst CLI** — Required for compiling `.typ` files (`typst compile`)
-  - Install: https://github.com/typst/typst/releases
-  - The skill targets Typst **0.14.2** but is backward-compatible with **0.13.x**
+Python **3.11+** runs both scripts without third-party packages. A Typst CLI is needed only for compilation and evaluation, not for offline catalog search. Obtain the compiler from the [official releases](https://github.com/typst/typst/releases) using the installation method appropriate to your environment.
 
----
+This skill's verified baseline is **Typst 0.15.1**. Check `typst --version`; no blanket compatibility with 0.13/0.14 is implied. Keep an existing project's compiler version unless a change is intended. Provide suitable fonts for CJK or other scripts.
 
-## Verify Installation
+## Verify the installed copy
 
-After installation, ask your agent:
+Replace `<installed-typst>` with the copied skill directory:
 
+```sh
+python "<installed-typst>/scripts/docs.py" status
+python "<installed-typst>/scripts/docs.py" search "selector.within"
+python "<installed-typst>/scripts/docs.py" show "sym.arrow.r.squiggly" --offline
+python "<installed-typst>/scripts/docs.py" show "table.cell:colspan"
 ```
-Write a minimal Typst document with a title and paragraph.
-```
 
-If the skill is loaded correctly, the agent should:
-1. Route through SKILL.md's Quick intent check
-2. Reference `book-paper-slide-cv-patterns.md` or `markup-and-document-structure.md`
-3. Produce runnable Typst code
+The first three commands need no network. The last retrieves an official page if it is not cached, then checks its version and extracts the exact parameter. The cache is outside the skill; see [cache behavior](../skills/typst/references/docs-and-versions.md#offline-and-cache-behavior).
 
----
-
-## Directory Structure
-
-```
-skills/typst/
-├── SKILL.md                          # Core SOP — routing, workflow, authority
-├── scripts/
-│   ├── query_reference.py            # Broad cross-source API lookup
-│   ├── query_api_index.py            # Fast official API index query
-│   ├── build_reference.py            # Build comprehensive reference DB
-│   └── refresh_typst_knowledge.py    # Refresh API index from source
-└── reference/
-    ├── 00-index.md                   # Master routing index
-    ├── 01-workflows/                 # Compile, debug, publish, templates
-    ├── 02-language/                  # Markup, styling, scripting, math
-    ├── 03-library/                   # Layout, text, model, visualize, etc.
-    ├── 04-modules/                   # std, calc, sys, sym, emoji
-    ├── 05-recipes/                   # CV, paper, slides, Chinese typesetting
-    ├── 06-dev/                       # Architecture, CLI, testing
-    ├── 07-versioning/                # What's new, blue-book gaps
-    ├── 08-generated/                 # Auto-generated API index + snapshot
-    └── generated/                    # Broad cross-source reference DB
-```
+Then ask the agent to use `$typst` for a small document. Confirm it follows the relevant guide, compiles when a CLI is available, and states any unavailable verification rather than claiming success. Automatic invocation is enabled; the skill can also be requested explicitly.

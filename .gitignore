@@ -13,3 +13,6 @@ __pycache__/
 Thumbs.db
 /--help/
 /build/*.pdf
+/.worktrees/
+/.agents/**/*.local.*
+/.agents/**/*.local/

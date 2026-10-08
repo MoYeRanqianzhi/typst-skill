@@ -1,7 +1,7 @@
 ﻿interface:
   display_name: "Typst"
-  short_description: "Source-grounded Typst authoring and API lookup."
-  default_prompt: "Use $typst to write, debug, or explain Typst code with source-grounded API references."
+  short_description: "Write and verify Typst with version-aware API lookup"
+  default_prompt: "Use $typst to create or improve my document, check the relevant APIs, and verify the requested output."
 
 policy:
   allow_implicit_invocation: true

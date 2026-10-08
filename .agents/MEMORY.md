@@ -1,0 +1,1 @@
+- [Reference provenance](memory/reference-provenance.md) — why release behavior, live documentation, and the location catalog are separate evidence.

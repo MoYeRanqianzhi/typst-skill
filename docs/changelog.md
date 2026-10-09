@@ -1,11 +1,13 @@
 # Changelog
 
-## 2026-10-09 — Typst 0.15.1 redesign
+## 2026-10-09 — v0.5.0: Typst 0.15.1 redesign
 
 - Replaced the previous routed manual and dual source-parser indexes with a task-oriented entrypoint, eight focused guides, and one portable official-documentation lookup tool.
 - Added exact scoped-member and parameter resolution, symbol metadata, typed HTML discovery, explicit provenance, cached reading, and documentation-version checks.
 - Rebased guidance on the latest verified stable release, including `path`, `selector.within`, multiple bibliographies, `typst eval`, MathML, and experimental bundle export.
 - Removed the runtime dependency on local source checkouts and PyYAML. Replaced mental verification guidance with compilation and target-appropriate output inspection.
+- Preserved usable offline pages when a refresh encounters a different documentation version; incomplete catalog downloads fail before replacing output.
+- Preserved literal backticks inside inline API examples with collision-free Markdown code delimiters.
 - Replaced obsolete agent-memory documents with contributor maintenance documentation and `.agents/` records. Historical reviews below describe previous releases only.
 
 ## 2026-04-12 — v0.4.0: Reference Expansion & SKILL.md Rewrite

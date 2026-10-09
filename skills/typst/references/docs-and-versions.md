@@ -39,7 +39,7 @@ python "<skill-dir>/scripts/docs.py" show "table.cell" --cache-dir .cache/typst-
 python "<skill-dir>/scripts/docs.py" show "table.cell" --refresh
 ```
 
-If no cached page exists, offline `show` fails explicitly; it does not invent the missing documentation. If the live page advertises a different release from the catalog, it fails instead of presenting mixed-version evidence. Read an available version-matched source or explain what cannot be confirmed. No command updates the user's compiler or installs packages.
+If no cached page exists, offline `show` fails explicitly; it does not invent the missing documentation. If the live page advertises a different release from the catalog, it fails before replacing the existing cache, so a previously fetched version-matched page remains usable offline. Read an available version-matched source or explain what cannot be confirmed. No command updates the user's compiler or installs packages.
 
 ## Stable release, live docs, development source
 

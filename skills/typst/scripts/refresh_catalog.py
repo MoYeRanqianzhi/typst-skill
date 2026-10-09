@@ -101,7 +101,15 @@ def fetch(url: str, timeout: float, content_type: str) -> bytes:
                 raise ValueError(f"Unexpected response from {url}")
             if response.headers.get_content_type() != content_type:
                 raise ValueError(f"Unexpected content type from {url}")
+            declared_length = response.headers.get("Content-Length")
+            if declared_length is not None:
+                declared_length = int(declared_length)
+                if declared_length < 0 or declared_length > MAX_DOWNLOAD:
+                    raise ValueError(f"Invalid or oversized Content-Length from {url}")
             body = response.read(MAX_DOWNLOAD + 1)
+            # Bounded reads can return a short fixed-length body without raising.
+            if declared_length is not None and len(body) != declared_length:
+                raise ValueError(f"Incomplete download from {url}; output was not replaced")
     except (OSError, HTTPException) as error:
         raise OSError(f"Download failed for {url}: {error}") from error
     if not body or len(body) > MAX_DOWNLOAD:

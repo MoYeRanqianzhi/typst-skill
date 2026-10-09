@@ -88,6 +88,7 @@ class Documentation(HTMLParser):
         self.suppressed = 0
         self.pre_depth = 0
         self.pre_parts = []
+        self.inline_parts = None
         self.headings = []
         self.versions = set()
         self.source_commits = set()
@@ -138,7 +139,7 @@ class Documentation(HTMLParser):
             self.headings.append((attrs.get("id"), int(tag[1]), self.length))
             self.append("#" * int(tag[1]) + " ")
         elif tag == "code" and not self.pre_depth:
-            self.append("`")
+            self.inline_parts = []
         elif tag == "small":
             self.append(" ")
         elif tag in self.BLOCK or tag in {"br", "hr"}:
@@ -170,7 +171,16 @@ class Documentation(HTMLParser):
             elif self.pre_depth:
                 pass
             elif tag == "code" and not self.pre_depth:
-                self.append("`")
+                code = "".join(self.inline_parts or [])
+                self.inline_parts = None
+                if code:
+                    longest_run = max((len(run) for run in re.findall(r"`+", code)), default=0)
+                    fence = "`" * (longest_run + 1)
+                    padded = code.startswith("`") or code.endswith("`") or (
+                        code.startswith(" ") and code.endswith(" ") and bool(code.strip(" "))
+                    )
+                    padding = " " if padded else ""
+                    self.append(f"{fence}{padding}{code}{padding}{fence}")
             elif tag in self.BLOCK or re.fullmatch(r"h[1-6]", tag):
                 self.append("\n")
             elif tag == "a" and "pill" in (attrs.get("class") or "").split():
@@ -193,6 +203,8 @@ class Documentation(HTMLParser):
         if self.main_depth is not None and not self.suppressed:
             if self.pre_depth:
                 self.pre_parts.append(text)
+            elif self.inline_parts is not None:
+                self.inline_parts.append(text)
             else:
                 self.append(re.sub(r"\s+", " ", text))
 
@@ -305,7 +317,7 @@ def default_cache() -> Path:
     return (Path(base) if base else Path.home() / ".cache") / "typst-skill" / "docs"
 
 
-def read_page(url: str, cache_dir: Path, offline: bool, refresh: bool) -> tuple[dict, bool]:
+def read_page(url: str, cache_dir: Path, offline: bool, refresh: bool, expected_version: str) -> tuple[dict, bool]:
     check_url(url)
     cache_path = cache_dir / (hashlib.sha256(url.encode()).hexdigest() + ".json")
     if cache_path.is_file() and not refresh:
@@ -319,6 +331,11 @@ def read_page(url: str, cache_dir: Path, offline: bool, refresh: bool) -> tuple[
     document = Documentation()
     document.feed(body)
     document.validate_complete()
+    if document.version() != expected_version:
+        raise LookupFailure(
+            f"Documentation version {document.version() or 'unknown'} differs from catalog {expected_version}. "
+            f"The existing cache was preserved; inspect {url} and update the catalog deliberately."
+        )
     record = {"url": url, "fetched_at": datetime.now(timezone.utc).isoformat(), "html": body}
     cache_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=cache_dir, suffix=".tmp", delete=False) as temporary:
@@ -400,7 +417,7 @@ def run(args) -> int:
         result = {"catalog_version": catalog["version"], "source": "bundled official symbol metadata", **entry}
     else:
         page_url, fragment = urldefrag(entry["url"])
-        record, cached = read_page(page_url, args.cache_dir, args.offline, args.refresh)
+        record, cached = read_page(page_url, args.cache_dir, args.offline, args.refresh, catalog["version"])
         document = Documentation()
         document.feed(record["html"])
         version = document.version()

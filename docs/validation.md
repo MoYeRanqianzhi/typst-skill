@@ -42,6 +42,8 @@ The independent debugging task exposed an invalid guide command: CLI `eval --in`
 
 Independent source/output review also corrected delimiter-sizing advice and qualified semantic preservation for HTML show rules. Runtime regressions cover truncated fixed-length and chunked HTTP responses, old partial caches, malformed JSON, case-sensitive glyph values, exact aliases, and code examples containing their own Markdown fences.
 
+The v0.5.0 release review additionally checks that a wrong-version refresh leaves the previous offline cache usable, a rejected first fetch creates no cache, a valid refresh replaces it, and the catalog downloader rejects short or invalid `Content-Length` responses. It also round-trips inline code containing literal backticks through a Markdown parser. The review reproduced and corrected the cache-replacement, short-download, and inline-code formatting defects.
+
 ## What these checks do not establish
 
 They do not prove all future Typst inputs work, every live-document entry exists in the release compiler, or every font/backend behaves identically on other machines. No external PDF/A or PDF/UA conformance validator or assistive-technology review was run. HTML DOM/math checks are not a full browser/accessibility review. `typst init` was source-reviewed; no registry template was installed to validate it. Evaluation-generated documents and machine-specific tools stay ignored and are not part of the installed skill.
